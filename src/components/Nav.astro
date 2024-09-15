@@ -1,0 +1,49 @@
+---
+// You can access the current path using `Astro.url.pathname`
+const current = Astro.url.pathname;
+---
+
+<nav>
+  <ul>
+    <li>
+      <a href="/" class={current === "/" ? "active" : ""}>Home</a>
+    </li>
+    <li>
+      <a href="/journal" class={current === "/journal" ? "active" : ""}
+        >Journal</a
+      >
+    </li>
+    <li>
+      <a href="/weloveweb" class={current === "/weloveweb" ? "active" : ""}
+        >We Love Web</a
+      >
+    </li>
+  </ul>
+</nav>
+
+<style>
+  nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  li {
+    list-style: "";
+    padding: 0.4rem;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  li:hover {
+    background-color: rebeccapurple;
+    color: white;
+  }
+
+  .active {
+    background-color: blueviolet;
+  }
+
+</style>
