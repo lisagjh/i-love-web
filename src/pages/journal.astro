@@ -1,8 +1,20 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 import '../styles/global.css';
+
+import Layout from '../layouts/Layout.astro';
+
 import Nav from '../components/Nav.astro'
+
+const pageTitle = "Learning Journal";
+
 ---
+<ViewTransitions />
 
-<Nav />
-
-<h1>Journal</h1>
+<Layout title="Lisa's learning journal">
+	<main  transition:animate="fade">
+		<h1>{pageTitle}</h1>
+		
+	</main>
+</Layout>

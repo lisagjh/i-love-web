@@ -22,6 +22,23 @@ const current = Astro.url.pathname;
 </nav>
 
 <style>
+  nav {
+    display: grid;
+    place-items: center;
+    height: 2.5rem;
+    width: 95%;
+    margin: 0 auto;
+    background: hsl(255, 52%, 99%, 20%);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(15.5px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+
+    position: sticky;
+    top: 10px;
+  }
+
   nav ul {
     display: flex;
     flex-direction: row;
@@ -29,21 +46,44 @@ const current = Astro.url.pathname;
 
   li {
     list-style: "";
-    padding: 0.4rem;
+    padding: var(--space-three) 0;
+    border-radius: 2px;
   }
 
-  a {
-    color: black;
-    text-decoration: none;
+  @media (max-width: 18em) {
+    nav {
+      overflow: scroll;
+      width: 100%;
+    }
+    li {
+      font-size: 14px;
+    }
+    a {
+      text-wrap: nowrap;
+    }
   }
 
   li:hover {
-    background-color: rebeccapurple;
-    color: white;
+    background-color: hsl(255, 52%, 99%, 10%);
+  }
+
+  li:hover a {
+    text-decoration-color: var(--baby-pink);
+    text-decoration-thickness: 2px;
+  }
+
+  a {
+    color: var(--white);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1.5px;
+    margin: var(--space-three);
+    padding: var(--space-two);
+    border-radius: 4px;
+    transition: 0.25s ease-in-out;
   }
 
   .active {
-    background-color: blueviolet;
+    text-decoration-color: var(--pink);
+    text-decoration-thickness: 3px;
   }
-
 </style>

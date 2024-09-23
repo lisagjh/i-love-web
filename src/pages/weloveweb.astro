@@ -1,8 +1,17 @@
 ---
-import '../styles/global.css';
-import Nav from '../components/Nav.astro'
+import { ViewTransitions } from "astro:transitions";
+
+import Layout from "../layouts/Layout.astro";
+
+import "../styles/global.css";
+
+const pageTitle = "We Love Web";
 ---
 
-<Nav />
+<ViewTransitions />
 
-<h1>We Love Web</h1>
+<Layout title="Lisa's welovewebs">
+  <main  transition:animate="fade">
+    <h1>{pageTitle}</h1>
+  </main>
+</Layout>

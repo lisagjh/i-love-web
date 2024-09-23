@@ -1,20 +1,30 @@
 ---
-import '../styles/global.css';
+import { ViewTransitions } from 'astro:transitions';
 
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Nav from '../components/Nav.astro'
+import "../styles/global.css";
+
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const pageTitle = "Home";
 ---
 
-<Nav />
-
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Home</h1>
-		
-	</main>
-</Layout>
-
-<style>
-	
-</style>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+	<meta name="description" content="Lisa van der Hoorn's 'i-love-web' project for FDND.">
+    <title>{pageTitle}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <Layout title="Lisa's homepage">
+      <main  transition:animate="fade">
+        <h1>{pageTitle}</h1>
+      </main>
+    </Layout>
+  </body>
+</html>
