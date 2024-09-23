@@ -18,6 +18,8 @@
     --purple: hsl(255,85%, 55%);
     --pink: hsl(307, 79%, 66%);
     --baby-pink: hsl(307, 90%, 84%);
+
+    --background: hsl(255, 52%, 99%, 10%);
 }
 
 * {
@@ -43,4 +45,12 @@ h1, h2, h3 {
 
 li {
     list-style: "";
+}
+
+a {
+    color: var(--white);   
+}
+
+a:hover {
+    color: var(--pink);
 }
