@@ -13,17 +13,24 @@ const allPosts = await Astro.glob("./posts/*.md");
 <Layout title="Lisa's learning journal">
   <main transition:animate="fade">
     <h1>{pageTitle}</h1>
-    {
-      allPosts.map((post) => (
-        <li>
-          <a href={post.url}>{post.frontmatter.title}</a>
-        </li>
-      ))
-    }
+    <p>Op deze pagina vind je mijn learning journal.</p>
+    <ul>
+      {
+        allPosts.map((post) => (
+          <li>
+            <a href={post.url}>{post.frontmatter.title}</a>
+          </li>
+        ))
+      }
+    </ul>
   </main>
 </Layout>
 
 <style>
+  h1, p {
+    margin-bottom: 0.5rem;
+  }
+
   li {
     padding: var(--space-two) var(--space-three);
   }
@@ -36,6 +43,6 @@ const allPosts = await Astro.glob("./posts/*.md");
 
   li:hover {
     background: var(--background);
-	border-radius: 4px;
+    border-radius: 4px;
   }
 </style>

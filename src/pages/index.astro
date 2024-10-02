@@ -4,27 +4,16 @@ import { ViewTransitions } from 'astro:transitions';
 import "../styles/global.css";
 
 import Layout from "../layouts/Layout.astro";
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
 
 const pageTitle = "Home";
 ---
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-	<meta name="description" content="Lisa van der Hoorn's 'i-love-web' project for FDND.">
-    <title>{pageTitle}</title>
     <ViewTransitions />
-  </head>
-  <body>
     <Layout title="Lisa's homepage">
       <main  transition:animate="fade">
         <h1>{pageTitle}</h1>
+
+        <section>
+          <p>Welcome to my digital palace.</p>
+        </section>
       </main>
     </Layout>
-  </body>
-</html>

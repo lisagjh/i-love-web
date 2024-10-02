@@ -6,9 +6,6 @@ const current = Astro.url.pathname;
 <nav>
   <ul>
     <li>
-      <a href="/" class={current === "/" ? "active" : ""}>Home</a>
-    </li>
-    <li>
       <a href="/journal" class={current === "/journal" ? "active" : ""}
         >Journal</a
       >
@@ -16,6 +13,11 @@ const current = Astro.url.pathname;
     <li>
       <a href="/weloveweb" class={current === "/weloveweb" ? "active" : ""}
         >We Love Web</a
+      >
+    </li>
+    <li>
+      <a href="/gallery" class={current === "/gallery" ? "active" : ""}
+        >Gallery</a
       >
     </li>
   </ul>
@@ -26,15 +28,13 @@ const current = Astro.url.pathname;
     display: grid;
     place-items: center;
     height: 2.5rem;
-    width: 95%;
+    max-width: 25.5rem;
     margin: 0 auto;
-    background: hsl(255, 52%, 99%, 20%);
+    background: var(--background);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(15.5px);
+    backdrop-filter: blur(25.5px);
     border: 1px solid rgba(255, 255, 255, 0.22);
-
     position: sticky;
     top: 10px;
   }
@@ -48,19 +48,7 @@ const current = Astro.url.pathname;
     list-style: "";
     padding: var(--space-three) 0;
     border-radius: 2px;
-  }
-
-  @media (max-width: 18em) {
-    nav {
-      overflow: scroll;
-      width: 100%;
-    }
-    li {
-      font-size: 14px;
-    }
-    a {
-      text-wrap: nowrap;
-    }
+    text-wrap: nowrap;
   }
 
   li:hover {
@@ -85,5 +73,18 @@ const current = Astro.url.pathname;
   .active {
     text-decoration-color: var(--pink);
     text-decoration-thickness: 3px;
+  }
+
+  @media (max-width: 18em) {
+    nav {
+      overflow: scroll;
+      width: 100%;
+    }
+    li {
+      font-size: 14px;
+    }
+    a {
+      text-wrap: nowrap;
+    }
   }
 </style>

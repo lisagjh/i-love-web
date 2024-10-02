@@ -1,0 +1,16 @@
+---
+import { ViewTransitions } from "astro:transitions";
+
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+const pageTitle = "Gallery";
+---
+
+<ViewTransitions />
+
+<Layout title="Lisa's Gallery">
+  <main transition:animate="fade">
+    <h1>{pageTitle}</h1>
+    <p>Hier komt mijn digital garden, of whatever ik maar wil. Ooit.</p>
+  </main>
+</Layout>
