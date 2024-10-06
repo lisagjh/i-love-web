@@ -1,25 +1,21 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-
-import "../styles/global.css";
-import Layout from "../layouts/Layout.astro";
 const pageTitle = "Learning Journal";
-// https://docs.astro.build/en/tutorial/5-astro-api/1/
-const allPosts = await Astro.glob("./posts/*.md");
+import "../styles/global.css";
+
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import BlogPost from "../components/BlogPost.astro";
+
+const allPosts = await getCollection("posts");
 ---
 
-<ViewTransitions />
-
 <Layout title="Lisa's learning journal">
-  <main transition:animate="fade">
+  <main>
     <h1>{pageTitle}</h1>
-    <p>Op deze pagina vind je mijn learning journal.</p>
     <ul>
       {
         allPosts.map((post) => (
-          <li>
-            <a href={post.url}>{post.frontmatter.title}</a>
-          </li>
+          <BlogPost url={"/posts/" + post.slug} title={post.data.title} />
         ))
       }
     </ul>
@@ -27,18 +23,18 @@ const allPosts = await Astro.glob("./posts/*.md");
 </Layout>
 
 <style>
-  h1, p {
+  h1,
+  p {
     margin-bottom: 0.5rem;
   }
 
   li {
-    padding: var(--space-two) var(--space-three);
+    padding: 0.5rem 0;
   }
 
   a {
     height: 100%;
     width: 100%;
-    padding: var(--space-two) var(--space-three);
   }
 
   li:hover {

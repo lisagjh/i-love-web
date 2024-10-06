@@ -1,17 +1,22 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-
-import Layout from "../layouts/Layout.astro";
-
 import "../styles/global.css";
 
-const pageTitle = "We Love Web";
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import BlogPost from "../components/BlogPost.astro";
+
+const pageTitle = "My Astro Learning Blog";
+const allPosts = await getCollection("weloveweb");
 ---
 
-<ViewTransitions />
-
-<Layout title="Lisa's welovewebs">
-  <main  transition:animate="fade">
-    <h1>{pageTitle}</h1>
+<Layout pageTitle={pageTitle}>
+  <main>
+    <ul>
+      {
+        allPosts.map((post) => (
+          <BlogPost url={"/weloveweb/" + post.slug} title={post.data.title} />
+        ))
+      }
+    </ul>
   </main>
 </Layout>

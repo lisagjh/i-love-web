@@ -1,19 +1,16 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-
 import "../styles/global.css";
 
 import Layout from "../layouts/Layout.astro";
 
 const pageTitle = "Home";
 ---
-    <ViewTransitions />
     <Layout title="Lisa's homepage">
-      <main  transition:animate="fade">
+      <main>
         <h1>{pageTitle}</h1>
 
         <section>
-          <p>Welcome to my digital palace.</p>
+          <p>Welcome to my digital garden.</p>
         </section>
       </main>
     </Layout>

@@ -52,7 +52,9 @@ li {
 }
 
 a {
-    color: var(--white);   
+    color: var(--white);
+    display: inline-block;
+    min-height: 2.5rem;
 }
 
 a:hover {
