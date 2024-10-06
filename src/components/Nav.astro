@@ -33,11 +33,10 @@ const current = Astro.url.pathname;
     background: var(--background);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(25.5px);
     border: 1px solid rgba(255, 255, 255, 0.22);
     position: sticky;
     top: 10px;
-    z-index: 10;
   }
 
   nav ul {
@@ -52,13 +51,11 @@ const current = Astro.url.pathname;
     text-wrap: nowrap;
   }
 
-  a {
-    height: 100%;
-    width: 100%;
+  li:hover {
+    background-color: hsl(255, 52%, 99%, 10%);
   }
 
-  a:hover {
-    background-color: hsl(255, 52%, 99%, 10%);
+  li:hover a {
     text-decoration-color: var(--baby-pink);
     text-decoration-thickness: 2px;
   }
