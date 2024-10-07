@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import BlogpostLayout from "../../layouts/BlogpostLayout.astro";
+
+export async function getStaticPaths() {
+  const talks = await getCollection("talks");
+  return talks.map(talk => ({
+    params: { slug: talk.slug },
+    props: { talk },
+  }));
+}
+
+const { talk } = Astro.props;
+const { Content } = await talk.render();
+---
+
+<BlogpostLayout frontmatter={talk.data}>
+  <Content />
+</BlogpostLayout>

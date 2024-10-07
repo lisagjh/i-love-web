@@ -2,10 +2,6 @@
 title: "Vasilis van Gemert"
 date: 2024-13-09
 description: "Dit is mijn learning journal van week 1 van sprint 14"
-author: "Lisa"
-image:
-  url: "https://docs.astro.build/assets/rose.webp"
-  alt: "The Astro logo on a dark background with a pink glow."
 tags: ["S13", "weloveweb", "Sveltekit", "client"]
 ---
 

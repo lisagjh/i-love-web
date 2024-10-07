@@ -2,9 +2,6 @@
 title: "Nico.computer"
 date: 2024-04-10
 description: "Dit is mijn learning journal van week 1 van sprint 14"
-image:
-  url: "https://docs.astro.build/assets/rose.webp"
-  alt: "The Astro logo on a dark background with a pink glow."
 tags: ["S13", "weloveweb", "Sveltekit", "client"]
 ---
 

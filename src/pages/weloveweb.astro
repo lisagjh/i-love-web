@@ -1,22 +1,42 @@
 ---
+const pageTitle = "My Astro Learning Blog";
 import "../styles/global.css";
 
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import BlogPost from "../components/BlogPost.astro";
 
-const pageTitle = "My Astro Learning Blog";
-const allPosts = await getCollection("weloveweb");
+const allPosts = await getCollection("talks");
 ---
-
 <Layout pageTitle={pageTitle}>
   <main>
+    <h1>We Love Web</h1>
     <ul>
-      {
-        allPosts.map((post) => (
-          <BlogPost url={"/weloveweb/" + post.slug} title={post.data.title} />
-        ))
-      }
+      {allPosts.map((post) => (
+        <BlogPost url={`/talks/${post.slug}`} title={post.data.title} />
+      ))}
     </ul>
   </main>
 </Layout>
+</Layout>
+
+<style>
+  h1,
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  li {
+    padding: 0.5rem 0;
+  }
+
+  a {
+    height: 100%;
+    width: 100%;
+  }
+
+  li:hover {
+    background: var(--background);
+    border-radius: 4px;
+  }
+</style>

@@ -13,7 +13,7 @@ const postsCollection = defineCollection({
     })
  });
 
-const webCollection = defineCollection({
+ const talkCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.date(),
@@ -23,6 +23,6 @@ const webCollection = defineCollection({
 });
 
 export const collections = {
-  posts: postsCollection,
-  weloveweb: webCollection
+  'posts': postsCollection,
+  'talks': talkCollection
 };

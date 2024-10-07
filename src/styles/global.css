@@ -55,6 +55,7 @@ a {
     color: var(--white);
     display: inline-block;
     min-height: 2.5rem;
+    align-content: center;
 }
 
 a:hover {
