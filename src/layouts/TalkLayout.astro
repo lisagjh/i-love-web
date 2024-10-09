@@ -4,16 +4,16 @@ import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-  <Layout pageTitle={frontmatter.title}>
-    <article>
-      <h2>{frontmatter.title}</h2>
-      <p>{frontmatter.date.toString().slice(0, 10)}</p>
-      <p><em>{frontmatter.description}</em></p>
-      <section class="content">
-        <slot />
-      </section>
-    </article>
-  </Layout>
+<Layout pageTitle={frontmatter.title}>
+  <article>
+    <h2>{frontmatter.title}</h2>
+    <p>{frontmatter.date.toString().slice(0, 10)}</p>
+    <p><em>{frontmatter.description}</em></p>
+    <section class="content">
+      <slot />
+    </section>
+  </article>
+</Layout>
 
 <style>
   article {
@@ -30,10 +30,5 @@ const { frontmatter } = Astro.props;
   .content :global(h6) {
     margin-top: 1.5em;
     margin-bottom: 0.5em;
-  }
-
-  .content :global(li) {
-    list-style: disc;
-    margin: auto 2rem;
   }
 </style>

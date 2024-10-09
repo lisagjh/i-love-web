@@ -8,24 +8,21 @@ import BlogPost from "../components/BlogPost.astro";
 
 const allPosts = await getCollection("talks");
 ---
+
 <Layout pageTitle={pageTitle}>
   <main>
     <h1>We Love Web</h1>
     <ul>
-      {allPosts.map((post) => (
-        <BlogPost url={`/talks/${post.slug}`} title={post.data.title} />
-      ))}
+      {
+        allPosts.map((talk) => (
+          <BlogPost url={`/talks/${talk.slug}`} title={talk.data.title} />
+        ))
+      }
     </ul>
   </main>
 </Layout>
-</Layout>
 
 <style>
-  h1,
-  p {
-    margin-bottom: 0.5rem;
-  }
-
   li {
     padding: 0.5rem 0;
   }

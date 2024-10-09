@@ -1,5 +1,4 @@
 import rss from "@astrojs/rss";
-import { pagesGlobToRssItems } from "@astrojs/rss";
 import { getCollection } from "astro:content";
 
 export async function GET(context) {
@@ -17,3 +16,5 @@ export async function GET(context) {
     customData: `<language>en-us</language>`,
   });
 }
+
+

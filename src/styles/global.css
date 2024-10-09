@@ -19,7 +19,7 @@
     --pink: hsl(307, 79%, 66%);
     --baby-pink: hsl(307, 90%, 84%);
 
-    --background: hsl(255, 52%, 99%, 20%);
+    --background: hsl(282, 73%, 91%, 50%);
 }
 
 * {
@@ -38,7 +38,7 @@ body {
 main {
     justify-self: center;
     padding: var(--space-four);
-    min-height: 100dvh;
+    height: 100dvh;
     width: 100%;
     max-width: 40rem;
 }
