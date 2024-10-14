@@ -4,9 +4,9 @@ import { getCollection } from "astro:content";
 export async function GET(context) {
   const posts = await getCollection("posts");
   return rss({
-    title: "Astro Learner | Blog",
-    description: "My journey learning Astro",
-    site: context.site,
+    title: "Lisa loves web | Blog",
+    description: "Lisa loves web",
+    site: "https://lisa-loves-web.vercel.app",
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.pubDate,
