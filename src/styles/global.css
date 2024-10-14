@@ -36,6 +36,8 @@ body {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     justify-self: center;
     padding: var(--space-four);
     height: 100dvh;

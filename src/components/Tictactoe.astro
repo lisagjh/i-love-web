@@ -1,0 +1,40 @@
+<script></script>
+
+<div class="wrapper">
+  <section class="board">
+    <div class="cell cell-one"></div>
+    <div class="cell cell-two"></div>
+    <div class="cell cell-three"></div>
+    <div class="cell cell-four"></div>
+    <div class="cell cell-five"></div>
+    <div class="cell cell-six"></div>
+    <div class="cell cell-seven"></div>
+    <div class="cell cell-eight"></div>
+    <div class="cell cell-nine"></div>
+  </section>
+</div>
+
+<style>
+  .wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+  .board {
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  .cell {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--baby-pink);
+    transition: .25s ease-in-out;
+  }
+  .cell:hover {
+    background-color: var(--pink);
+  }
+</style>
