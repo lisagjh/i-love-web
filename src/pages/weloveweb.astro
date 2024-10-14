@@ -4,7 +4,8 @@ import "../styles/global.css";
 
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import BlogPost from "../components/BlogPost.astro";
+import Blogpost from "../components/Blogpost.astro";
+
 
 const allPosts = await getCollection("talks");
 ---
@@ -15,7 +16,7 @@ const allPosts = await getCollection("talks");
     <ul>
       {
         allPosts.map((talk) => (
-          <BlogPost url={`/talks/${talk.slug}`} title={talk.data.title} />
+          <Blogpost url={`/talks/${talk.slug}`} title={talk.data.title} />
         ))
       }
     </ul>
