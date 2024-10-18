@@ -1,9 +1,9 @@
 ---
 import { gsap } from "gsap";
 ---
+
 <header>
-  <!-- 
-    <a href="/" aria-label="home">
+  <a href="/" aria-label="home">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="269"
@@ -74,17 +74,17 @@ import { gsap } from "gsap";
             stdDeviation="15.9"></feGaussianBlur>
         </filter>
       </defs>
-    </svg></a
-  > 
--->
+    </svg></a>
 
-  <h1><a href="/">
+  <h1>
+    <a href="/">
       <span>I</span>
       <br />
       <span> Love</span>
       <br />
       <span>Web</span>
-  </a></h1>
+    </a>
+  </h1>
 </header>
 
 <style>
@@ -105,6 +105,10 @@ import { gsap } from "gsap";
     grid-column: 1;
     grid-row: 1;
     z-index: 10;
+  }
+
+  a:hover svg path {
+    filter: blur(100px);
   }
 
   a {

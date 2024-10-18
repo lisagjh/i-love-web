@@ -16,10 +16,11 @@
     --white: hsl(255, 52%, 99%);
     --black: hsl(259, 78%, 7%);
     --purple: hsl(255,85%, 55%);
+    --dark-purple: hsl(255,95%, 55%);
     --pink: hsl(307, 79%, 66%);
     --baby-pink: hsl(307, 90%, 84%);
 
-    --background: hsl(282, 73%, 91%, 50%);
+    --background: hsl(282, 73%, 91%, 60%);
 }
 
 * {
@@ -45,7 +46,7 @@ main {
     max-width: 40rem;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--fancy-font);
 }
 

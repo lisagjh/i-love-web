@@ -21,6 +21,22 @@ const { frontmatter } = Astro.props;
     max-width: 65ch;
     margin: 0 auto;
   }
+
+  .content :global(h1) {
+    font-size: 3rem;
+  }
+
+  .content :global(h2) {
+    font-size: 2.5rem;
+  }
+
+  .content :global(h3) {
+    font-size: 2rem;
+  }
+
+  .content :global(h4) {
+    font-size: 1.5rem;
+  }
   
   .content :global(h1),
   .content :global(h2),
@@ -28,7 +44,13 @@ const { frontmatter } = Astro.props;
   .content :global(h4),
   .content :global(h5),
   .content :global(h6) {
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
+    margin: 1rem 0;
+  }
+
+
+
+  .content :global(li) {
+    margin-left: 1rem;
+    list-style: disc;
   }
 </style>

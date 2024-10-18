@@ -2,39 +2,53 @@
 // You can access the current path using `Astro.url.pathname`
 const current = Astro.url.pathname;
 ---
-
-<nav>
-  <ul>
-    <li>
-      <a href="/journal" class={current === "/journal" ? "active" : ""}
-        >Journal</a
-      >
-    </li>
-    <li>
-      <a href="/weloveweb" class={current === "/weloveweb" ? "active" : ""}
-        >We Love Web</a
-      >
-    </li>
-    <li>
-      <a href="/gallery" class={current === "/gallery" ? "active" : ""}
-        >Gallery</a
-      >
-    </li>
-  </ul>
-</nav>
+  <nav>
+    <ul>
+      <li>
+        <a href="/" class={current === "/" ? "active" : ""}
+          >Home</a
+        >
+      </li>
+      <li>
+        <a href="/journal" class={current === "/journal" ? "active" : ""}
+          >Journal</a
+        >
+      </li>
+      <li>
+        <a href="/weloveweb" class={current === "/weloveweb" ? "active" : ""}
+          >We Love Web</a
+        >
+      </li>
+      <li>
+        <a href="/gallery" class={current === "/gallery" ? "active" : ""}
+          >Gallery</a
+        >
+      </li>
+    </ul>
+  </nav>
 
 <style>
+  .home {
+    display: none;
+  }
+
+  .nav-wrapper {
+    position: sticky;
+    top: 2rem;
+    display: grid;
+    justify-self: center;
+    width: fit-content;
+  }
+
   nav {
     display: grid;
     place-items: center;
     margin: 0 auto;
-    background: var(--background);
+    background: var(--purple);
     border-radius: 8px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.22);
-    position: sticky;
-    top: 10px;
     z-index: 100;
   }
 
@@ -61,15 +75,17 @@ const current = Astro.url.pathname;
 
   a:hover {
     background-color: var(--background);
+    color: var(--dark-purple);
   }
 
   a:active {
     background-color: var(--background);
+    color: var(--dark-purple);
     scale: 0.95;
   }
 
   .active {
-    text-decoration-color: var(--pink);
+    text-decoration-color: var(--dark-purple);
     text-decoration-thickness: 3px;
   }
 
