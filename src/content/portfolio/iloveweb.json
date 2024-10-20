@@ -1,0 +1,19 @@
+{
+    "title": "I Love Web Site",
+    "description": "i-love-web: a school project for my learning journal and talks",
+    "text": "More description body text.",
+    "live": "https://dda-liard.vercel.app/",
+    "repo": "https://github.com/lisagjh/voorhoede",
+    "image": {
+      "url": "/portfolio/iloveweb.png",
+      "alt": "Mockup of DDA website"
+    },
+    "tags": [
+      "Sveltekit",
+      "Directus",
+      "S14",
+      "DDA",
+      "Ongoing"
+    ],
+    "completed": false
+  }
