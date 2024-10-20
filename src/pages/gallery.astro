@@ -1,8 +1,10 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
-import Blogpost from "../components/Blogpost.astro";
+import Link from "../components/Link.astro";
+import WorkLink from "../components/WorkLink.astro";
 import { getCollection } from "astro:content";
+import WorkLink from "../components/WorkLink.astro";
 const PortfolioCollection = await getCollection("portfolio");
 
 const pageTitle = "Gallery";
@@ -11,10 +13,14 @@ const pageTitle = "Gallery";
 <Layout title="Lisa's Gallery">
   <h1>{pageTitle}</h1>
   <ul>
-    {
-      PortfolioCollection.map((portfolio) => (
-        <Blogpost url={"/portfolio/" + portfolio.slug} title={portfolio.data.title} />
-      ))
-    }
-  </ul>
+  {
+    PortfolioCollection.map((portfolio) => (
+      <Link 
+        url={`/portfolio/${portfolio.data.slug}`}
+        title={portfolio.data.title}
+        image={portfolio.data.image}
+      />
+    ))
+  }
+</ul>
 </Layout>

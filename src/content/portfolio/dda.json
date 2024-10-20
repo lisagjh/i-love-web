@@ -5,15 +5,13 @@
   "live": "https://dda-liard.vercel.app/",
   "repo": "https://github.com/lisagjh/voorhoede",
   "image": {
-    "url": "/portfolio/DDA.png",
+    "url": "./public/portfolio/DDA.png",
     "alt": "Mockup of DDA website"
   },
   "tags": [
     "Sveltekit",
-    "Directus",
-    "S14",
-    "DDA",
-    "Ongoing"
+    "Directus"
   ],
-  "completed": false
+  "completed": false,
+  "slug":"dda-vacature-site"
 }

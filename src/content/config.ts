@@ -37,7 +37,8 @@ const portfolioCollection = defineCollection({
       alt: z.string()
     }),
     tags: z.array(z.string()).optional(), // Optional tags array
-    completed: z.boolean() // Boolean to show project completion status
+    completed: z.boolean(), // Boolean to show project completion status,
+    slug: z.string()  // Ensure slug is required
   })
 });
 

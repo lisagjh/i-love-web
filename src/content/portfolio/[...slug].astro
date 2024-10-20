@@ -1,17 +1,19 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
 
 export async function getStaticPaths() {
   const portfolioCollection = await getCollection("portfolio");
+
   return portfolioCollection.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.data.slug }, // Make sure to access slug through 'data'
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
 ---
+
 <PortfolioLayout frontmatter={entry.data}>
   <h1>{entry.data.title}</h1>
   <p>{entry.data.description}</p>
