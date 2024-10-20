@@ -1,10 +1,20 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
-import Tictactoe from "../components/Tictactoe.astro";
+import Blogpost from "../components/Blogpost.astro";
+import { getCollection } from "astro:content";
+const PortfolioCollection = await getCollection("portfolio");
+
 const pageTitle = "Gallery";
 ---
 
 <Layout title="Lisa's Gallery">
-    <Tictactoe />
+  <h1>{pageTitle}</h1>
+  <ul>
+    {
+      PortfolioCollection.map((portfolio) => (
+        <Blogpost url={"/portfolio/" + portfolio.slug} title={portfolio.data.title} />
+      ))
+    }
+  </ul>
 </Layout>

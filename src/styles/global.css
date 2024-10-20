@@ -1,66 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
 
 @font-face {
-    font-family: "Amstir Pixel";
-    src: url(/fonts/AmstirPixel-Regular.otf)
-  }
+  font-family: "Amstir Pixel";
+  src: url(/fonts/AmstirPixel-Regular.otf);
+}
 
 :root {
-    --main-font: "Instrument Sans", sans-serif, arial, helvetica, sans-serif;
-    --fancy-font: "Amstir Pixel", serif, arial, helvetica, sans-serif;
-    --space-one: 1rem;
-    --space-two: .5rem;
-    --space-three: .25rem;
-    --space-four: 1.25rem;
+  --main-font: "Instrument Sans", sans-serif, arial, helvetica, sans-serif;
+  /* --heading-font: "Amstir Pixel", serif, arial, helvetica, sans-serif; */
+  --space-one: 1rem;
+  --space-two: 0.5rem;
+  --space-three: 0.25rem;
+  --space-four: 1.25rem;
 
-    --white: hsl(255, 52%, 99%);
-    --black: hsl(259, 78%, 7%);
-    --purple: hsl(255,85%, 55%);
-    --dark-purple: hsl(255,95%, 55%);
-    --pink: hsl(307, 79%, 66%);
-    --baby-pink: hsl(307, 90%, 84%);
-
-    --background: hsl(282, 73%, 91%, 60%);
+  --black: #121212;
+  --white: #f7f4f4;
+  --primary: hsl(137, 98%, 20%);
+  --secondary: hsl(32, 100%, 49%);
+  --tertiary: hsl(43, 100%, 51%);
+  --accent-one: hsl(192, 70%, 43%);
+  --accent-two: hsl(199, 64%, 73%);
 }
 
 * {
-    font-family: var(--main-font);
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  font-family: var(--main-font);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5rem;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    display: grid;
-    background-color: var(--purple);
-    color: var(--white);
+  display: flex;
+  flex-direction: column;
+  color: var(--black);
+}
+footer {
+  display: flex;
+  position: absolute;
+  text-align: center;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    padding: var(--space-four);
-    height: 100dvh;
-    width: 100%;
-    max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  padding: var(--space-four);
+  width: 100%;
+  max-width: 40rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--fancy-font);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  line-height: 2.5rem;
 }
 
 li {
-    list-style: "";
+  list-style: "-";
 }
 
 a {
-    color: var(--white);
-    display: inline-block;
-    min-height: 2.5rem;
-    align-content: center;
+  display: inline-block;
+  min-height: 2.5rem;
+  align-content: center;
 }
 
-a:hover {
-    color: var(--pink);
+a:visited {
+  color: currentColor;
 }

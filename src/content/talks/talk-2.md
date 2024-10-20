@@ -5,7 +5,7 @@ description: "Dit is mijn learning journal van week 1 van sprint 14"
 tags: ["S13", "weloveweb", "Sveltekit", "client"]
 ---
 
-# Nicolas Garniet
+# Nicolas Garnier
 [nico.computer](https://nico.computer/)
 
 sinds 2012

@@ -1,0 +1,20 @@
+---
+import "../styles/global.css";
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Layout pageTitle={frontmatter.title}>
+  <article>
+    <h2>{frontmatter.title}</h2>
+    <p><em>{frontmatter.goal}</em></p>
+    <p>{frontmatter.description}</p>
+    <iframe src="{frontmatter.live}" frameborder="0"></iframe>
+    <a href="{frontmatter.github}"></a>
+    <a href="{frontmatter.live}"></a>
+  </article>
+</Layout>
+
+<style>
+    
+</style>

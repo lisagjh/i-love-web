@@ -2,7 +2,7 @@
 title: "Shyanta Vleugel"
 date: 2024-10-16
 description: "A talk about Triple by Shyanta Vleugel"
-tags: ["S14", "talk", "Triple", "Choices", "Techstack"]
+tags: ["S15", "talk", "Triple", "Choices", "Techstack"]
 ---
 
 Shyanta werkt al 7 jaar bij Triple, nu als techlead. Daarvoor als frontender. 

@@ -44,7 +44,6 @@ const current = Astro.url.pathname;
     display: grid;
     place-items: center;
     margin: 0 auto;
-    background: var(--purple);
     border-radius: 8px;
     backdrop-filter: blur(15px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -64,7 +63,6 @@ const current = Astro.url.pathname;
   }
 
   a {
-    color: var(--white);
     text-decoration-line: underline;
     text-decoration-thickness: 1.5px;
     margin: var(--space-three);
@@ -72,20 +70,11 @@ const current = Astro.url.pathname;
     border-radius: 10px;
     transition: 0.25s ease-in-out;
   }
-
-  a:hover {
-    background-color: var(--background);
-    color: var(--dark-purple);
-  }
-
   a:active {
-    background-color: var(--background);
-    color: var(--dark-purple);
     scale: 0.95;
   }
 
   .active {
-    text-decoration-color: var(--dark-purple);
     text-decoration-thickness: 3px;
   }
 
