@@ -5,9 +5,69 @@ import Layout from "../layouts/Layout.astro";
 
 const pageTitle = "Home";
 ---
-    <Layout title="Lisa's homepage">
-        <h1>{pageTitle}</h1>
 
-        <section>
-        </section>
-    </Layout>
+<Layout title="Lisa's homepage">
+  <h1>{pageTitle}</h1>
+
+  <section>
+    <code>I Love Web</code>
+    <br />
+    <em
+      >Learning journal en digital garden... jouw persoonlijke i-love-web-site
+      is een verzameling zaken die met elkaar jouw frontenderschap tentoon
+      stellen. Het bestaat uit een learning journal welke je routinematig, het
+      liefst elke dag, bijhoudt. Daarnaast is er de digital garden, een site
+      waarbij de vorm compleet vrij staat.</em
+    >
+    <br />
+    <br />
+
+     Op deze <code>I Love Web - site</code> vind je, onder andere, mijn:
+    <ul>
+      <li>
+        <a href="/journal">Learning Journal:</a>
+        <br />
+         Dit zijn aantekeningen van college's, aantekeningen tijdens het werken,
+        gedachtes, en van alles en nog wat, per week per sprint.
+      </li>
+      <li>
+        <a href="/weloveweb">We Love Web:</a>
+        <br />
+         Dit zijn mijn aantekeningen van weloveweb talks en andere gastsprekers
+        tijdens de les.
+      </li>
+      <li>
+        <a href="/gallery">Gallery</a>
+        <br />
+         Het hoekje gereserveerd voor mijn Digital Garden. Nu vind je daar een
+        klein portfolio achtig iets.
+        <br />
+      </li>
+    </ul>
+  </section>
+</Layout>
+
+<style>
+  code {
+    font-size: 0.9rem;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    background-color: #cdcfd0;
+  }
+
+  section {
+    margin-top: 1.5rem;
+  }
+
+  ul {
+    margin-top: 0.75rem;
+  }
+
+  li {
+    list-style: "";
+  }
+
+  a {
+    font-size: 1.2rem;
+  }
+</style>
