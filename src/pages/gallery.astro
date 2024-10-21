@@ -12,16 +12,16 @@ const pageTitle = "Gallery";
 <Layout title="Lisa's Gallery">
   <h1>{pageTitle}</h1>
   <ul>
-  {
-    PortfolioCollection.map((portfolio) => (
-      <WorkLink 
-        url={`/portfolio/${portfolio.data.slug}`}
-        title={portfolio.data.title}
-        image={portfolio.data.image}
-        description={portfolio.data.description}
-        tags={portfolio.data.tags}
-      />
-    ))
-  }
-</ul>
+    {
+      PortfolioCollection.map((portfolio) => (
+        <WorkLink
+          url={`/portfolio/${portfolio.data.slug}`}
+          title={portfolio.data.title}
+          image={portfolio.data.image}
+          description={portfolio.data.description}
+          tags={portfolio.data.tags}
+        />
+      ))
+    }
+  </ul>
 </Layout>

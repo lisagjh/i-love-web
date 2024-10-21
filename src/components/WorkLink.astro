@@ -6,11 +6,12 @@ const { title, description, url, image, tags } = Astro.props;
   <a href={url} class="element">
     <h3>{title}</h3>
     <img src={image.url} alt={image.alt} width="200" />
-    <p>{description}</p>
+    <p class="description">{description}</p>
     <!-- Loop through the tags and display each one -->
     <ul class="tags">
       {tags.map((tag) => <li class="tag">{tag}</li>)}
     </ul>
+    <p class="view">View</p>
   </a>
 </li>
 
@@ -19,12 +20,18 @@ const { title, description, url, image, tags } = Astro.props;
     list-style: "";
     margin: 1rem 0;
     border-radius: 0.25rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(26, 27, 28, 0.2);
   }
 
   a.element {
     display: grid;
     justify-content: center;
+    align-items: center;
+    grid-template-areas:
+      "title title"
+      "image image"
+      "description description"
+      "tags view";
     height: 100%;
     width: 100%;
     padding: 0.5rem 1rem;
@@ -39,20 +46,38 @@ const { title, description, url, image, tags } = Astro.props;
     color: var(--primary);
   }
 
-
-  a.view {
-    color: var(--primary);
+  h3 {
+    transition: all 0.25s ease-in-out;
+    width: fit-content;
+    text-transform: uppercase;
+    grid-area: title;
+    justify-self: center;
   }
 
-  h3 {
-    transition: all .25s ease-in-out;
-    width: fit-content;
+  img {
+    grid-area: image;
+    justify-self: center;
+  }
+
+  .description {
+    grid-area: description;
+  }
+
+  .view {
+    color: var(--primary);
+    grid-area: view;
+    text-transform: uppercase;
+  }
+
+  .view:hover {
+    text-decoration: underline;
   }
 
   .tags {
     display: flex;
     flex-direction: row;
     gap: 0.2rem;
+    grid-area: tags;
   }
 
   .tag {
@@ -67,5 +92,31 @@ const { title, description, url, image, tags } = Astro.props;
 
   .tag:nth-of-type(2n + 2) {
     background-color: var(--accent-two);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    li {
+      animation: linear animate-in-and-out;
+      animation-timeline: view();
+    }
+    @keyframes animate-in-and-out {
+      entry 0% {
+        opacity: 0;
+        transform: translateY(50%);
+      }
+      entry 100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      exit 0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      exit 110% {
+        opacity: 0;
+        transform: translateY(-50%);
+      }
+    }
   }
 </style>
