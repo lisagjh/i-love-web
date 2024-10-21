@@ -7,7 +7,15 @@ const { title, description, url, image, tags } = Astro.props;
 <li>
   <a href={url} class="element">
     <h3>{title}</h3>
-    <Image src={image.url} alt={image.alt} width="200" height="167"/>
+
+    <Image src={image.url} alt="" height="167" width="200">
+
+    <!-- <picture>
+      <source srcset={image.url} type="image/avif" />
+      <source srcset={image.url} type="image/webp" />
+      <img src={image.url} alt={image.alt} width="200" height="167"/>
+    </picture> -->
+
     <p class="description">{description}</p>
     <!-- Loop through the tags and display each one -->
     <ul class="tags">
@@ -56,7 +64,7 @@ const { title, description, url, image, tags } = Astro.props;
     justify-self: center;
   }
 
-  img {
+  picture, img {
     grid-area: image;
     justify-self: center;
   }
