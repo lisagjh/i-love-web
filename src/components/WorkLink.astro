@@ -1,11 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+
 const { title, description, url, image, tags } = Astro.props;
 ---
 
 <li>
   <a href={url} class="element">
     <h3>{title}</h3>
-    <img src={image.url} alt={image.alt} width="200" />
+    <Image src={image.url} alt={image.alt} width="200" height="167"/>
     <p class="description">{description}</p>
     <!-- Loop through the tags and display each one -->
     <ul class="tags">
