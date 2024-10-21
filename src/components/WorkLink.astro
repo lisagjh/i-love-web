@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 
 const { title, description, url, image, tags } = Astro.props;
 ---
@@ -8,13 +9,7 @@ const { title, description, url, image, tags } = Astro.props;
   <a href={url} class="element">
     <h3>{title}</h3>
 
-    <Image src={image.url} alt="" height="167" width="200">
-
-    <!-- <picture>
-      <source srcset={image.url} type="image/avif" />
-      <source srcset={image.url} type="image/webp" />
-      <img src={image.url} alt={image.alt} width="200" height="167"/>
-    </picture> -->
+    <Picture src={image.url} formats={['avif', 'webp']} alt="" height="167" width="200"/>
 
     <p class="description">{description}</p>
     <!-- Loop through the tags and display each one -->
