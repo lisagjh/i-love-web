@@ -1,7 +1,71 @@
 ---
-const { title, url, image } = Astro.props;
+const { title, description, url, image, tags } = Astro.props;
 ---
+
 <li>
-    {image && <img src={image.url} alt={image.alt} />}
-    <a href={url}>{title}</a>
+  <a href={url} class="element">
+    <h3>{title}</h3>
+    <img src={image.url} alt={image.alt} width="200" />
+    <p>{description}</p>
+    <!-- Loop through the tags and display each one -->
+    <ul class="tags">
+      {tags.map((tag) => <li class="tag">{tag}</li>)}
+    </ul>
+  </a>
 </li>
+
+<style>
+  li {
+    list-style: "";
+    margin: 1rem 0;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  a.element {
+    display: grid;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+  }
+
+  a.element:hover {
+    color: currentColor;
+  }
+
+  a.element:hover h3 {
+    color: var(--primary);
+  }
+
+
+  a.view {
+    color: var(--primary);
+  }
+
+  h3 {
+    transition: all .25s ease-in-out;
+    width: fit-content;
+  }
+
+  .tags {
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+  }
+
+  .tag {
+    box-shadow: none;
+    width: fit-content;
+    padding: 0.2rem;
+  }
+
+  .tag:nth-of-type(2n + 1) {
+    background-color: var(--accent-one);
+  }
+
+  .tag:nth-of-type(2n + 2) {
+    background-color: var(--accent-two);
+  }
+</style>
