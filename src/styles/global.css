@@ -13,7 +13,7 @@
   --space-three: 0.25rem;
   --space-four: 1.25rem;
 
-  --black: #121212;
+  --black: hsl(312, 56%, 5%);
   --white: #faf8fe;
   --primary: hsl(277, 86%, 51%);
   --secondary: hsl(357, 86%, 72%);

@@ -11,10 +11,10 @@ const pageTitle = "Gallery";
 
 <Layout title="Lisa's Gallery">
   <h2>{pageTitle}</h2>
-  <p>Hier vind je wat werk waar ik blij van word of trots op ben.
-    <br>
+  <p>
+    Hier vind je wat werk waar ik blij van word of trots op ben.
+    <br />
     <em>In Progress</em>
-
   </p>
   <ul>
     {
@@ -30,3 +30,12 @@ const pageTitle = "Gallery";
     }
   </ul>
 </Layout>
+
+<style>
+  @media (min-width: 768px) {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+</style>
