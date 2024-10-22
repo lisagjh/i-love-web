@@ -3,10 +3,9 @@ interface Props {
   title: string;
 }
 
-import "../styles/global.css";
-
-
 const { title } = Astro.props;
+
+import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
 import Navigation from "../components/Navigation.astro";
