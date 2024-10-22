@@ -3,10 +3,22 @@
     View <a href="https://github.com/lisagjh/i-love-web">this repository</a> and
     others on <a href="https://github.com/lisagjh">my github</a>.
   </p>
+  <div class="nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/journal">Journal</a></li>
+      <li><a href="/weloveweb">We Love Web</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/other">Other</a></li>
+    </ul>
+  </div>
 </footer>
 
 <style>
   footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
     position: static;
     bottom: 0;
     width: 100vw;
@@ -15,8 +27,23 @@
     padding: var(--space-four);
   }
 
+  p {
+    text-align: start;
+  }
+
   a {
     color: var(--white);
     text-decoration: underline;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  li {
+    list-style: "";
+    margin: 0 0.5rem;
   }
 </style>

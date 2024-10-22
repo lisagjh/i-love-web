@@ -1,6 +1,6 @@
 ---
-import { Image } from 'astro:assets';
-import { Picture } from 'astro:assets';
+import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 
 const { title, description, url, image, tags } = Astro.props;
 ---
@@ -9,7 +9,13 @@ const { title, description, url, image, tags } = Astro.props;
   <a href={url} class="element">
     <h3>{title}</h3>
 
-    <Picture src={image.url} formats={['avif', 'webp']} alt="" height="167" width="200"/>
+    <Picture
+      src={image.url}
+      formats={["avif", "webp"]}
+      alt=""
+      height="167"
+      width="200"
+    />
 
     <p class="description">{description}</p>
     <!-- Loop through the tags and display each one -->
@@ -59,7 +65,8 @@ const { title, description, url, image, tags } = Astro.props;
     justify-self: center;
   }
 
-  picture, img {
+  picture,
+  img {
     grid-area: image;
     justify-self: center;
   }
@@ -103,25 +110,6 @@ const { title, description, url, image, tags } = Astro.props;
     li {
       animation: linear animate-in-and-out;
       animation-timeline: view();
-    }
-    @keyframes animate-in-and-out {
-      entry 0% {
-        opacity: 0;
-        transform: translateY(50%);
-      }
-      entry 100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      exit 0% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      exit 110% {
-        opacity: 0;
-        transform: translateY(-50%);
-      }
     }
   }
 </style>

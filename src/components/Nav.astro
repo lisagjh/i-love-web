@@ -2,32 +2,39 @@
 // You can access the current path using `Astro.url.pathname`
 const current = Astro.url.pathname;
 ---
-  <nav>
-    <ul>
-      <li>
-        <a href="/" class={current === "/" ? "active" : ""}
-          >Home</a
-        >
-      </li>
-      <li>
-        <a href="/journal" class={current === "/journal" ? "active" : ""}
-          >Journal</a
-        >
-      </li>
-      <li>
-        <a href="/weloveweb" class={current === "/weloveweb" ? "active" : ""}
-          >We Love Web</a
-        >
-      </li>
-      <li>
-        <a href="/gallery" class={current === "/gallery" ? "active" : ""}
-          >Gallery</a
-        >
-      </li>
-    </ul>
-  </nav>
+
+<nav>
+  <ul>
+    <li>
+      <a href="/" class={current === "/" ? "active" : ""}>Home</a>
+    </li>
+    <li>
+      <a href="/journal" class={current === "/journal" ? "active" : ""}
+        >Journal</a
+      >
+    </li>
+    <li>
+      <a href="/weloveweb" class={current === "/weloveweb" ? "active" : ""}
+        >We Love Web</a
+      >
+    </li>
+    <li>
+      <a href="/gallery" class={current === "/gallery" ? "active" : ""}
+        >Gallery</a
+      >
+    </li>
+    <li>
+      <a href="/other" class={current === "/other" ? "active" : ""}>Other</a>
+    </li>
+  </ul>
+</nav>
 
 <style>
+  .active {
+    color: var(--black);
+    background-color: var(--accent-one);
+  }
+
   .home {
     display: none;
   }
@@ -52,9 +59,11 @@ const current = Astro.url.pathname;
     z-index: 100;
   }
 
-  nav ul {
+  ul {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   li {
@@ -64,19 +73,19 @@ const current = Astro.url.pathname;
   }
 
   a {
-    text-decoration-line: underline;
-    text-decoration-thickness: 1.5px;
+    text-decoration-line: none;
     margin: var(--space-three);
     padding: var(--space-two);
     border-radius: 10px;
-    transition: 0.25s ease-in-out;
-  }
-  a:active {
-    scale: 0.95;
+    transition: 0.35s ease-in-out;
   }
 
-  .active {
-    text-decoration-thickness: 3px;
+  a:hover {
+    color: var(--primary);
+  }
+
+  a:active {
+    scale: 0.95;
   }
 
   @media (max-width: 21rem) {
