@@ -1,13 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
 
-@font-face {
-  font-family: "Amstir Pixel";
-  src: url(/fonts/AmstirPixel-Regular.otf);
-}
-
 :root {
   --main-font: "Instrument Sans", sans-serif, arial, helvetica, sans-serif;
-  /* --heading-font: "Amstir Pixel", serif, arial, helvetica, sans-serif; */
   --space-one: 1rem;
   --space-two: 0.5rem;
   --space-three: 0.25rem;
@@ -18,8 +12,8 @@
   --primary: hsl(277, 92%, 42%);
   --secondary: hsl(357, 86%, 72%);
   --tertiary: hsl(19, 86%, 65%);
-  --accent-one: hsl(135, 95%, 78%);
-  --accent-two: hsl(31, 95%, 78%);
+  --accent-one: hsl(197, 95%, 78%);
+  --accent-two: hsl(311, 80%, 83%);
 }
 
 * {
@@ -41,7 +35,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--white);
-  /* color: var(--black); */
 }
 
 .wrapper {
