@@ -18,8 +18,8 @@
   --primary: hsl(277, 86%, 51%);
   --secondary: hsl(357, 86%, 72%);
   --tertiary: hsl(19, 86%, 65%);
-  --accent-one: hsl(135, 90%, 64%);
-  --accent-two: hsl(35, 94%, 63%);
+  --accent-one: hsl(135, 95%, 78%);
+  --accent-two: hsl(31, 95%, 78%);
 }
 
 * {
