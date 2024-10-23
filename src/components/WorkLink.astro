@@ -8,7 +8,7 @@ const { title, description, url, image, tags } = Astro.props;
 <li>
   <a href={url} class="element">
     <h3>{title}</h3>
-
+    
     <Picture
       src={image.url}
       formats={["avif", "webp"]}

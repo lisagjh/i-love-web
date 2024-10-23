@@ -58,7 +58,13 @@ main {
   width: 100%;
 }
 
-@media (min-width: 850px) {
+@media (max-width: 53rem) {
+  main {
+    align-items: center;
+  }
+}
+
+@media (min-width: 53rem) {
   main {
     width: 80%;
     max-width: 60rem;
@@ -84,33 +90,6 @@ h6 {
 
 li {
   list-style: "-";
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  li {
-    animation: linear animate-in-and-out;
-    animation-timeline: view();
-  }
-  
-  @keyframes animate-in-and-out {
-    entry 0% {
-      opacity: 0;
-      transform: translateY(50%);
-    }
-    entry 100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    exit 0% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    exit 110% {
-      opacity: 0;
-      transform: translateY(-50%);
-    }
-  }
 }
 
 a {
