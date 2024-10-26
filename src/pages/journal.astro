@@ -1,29 +1,39 @@
 ---
 const pageTitle = "Learning Journal";
-import "../styles/global.css";
 
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import Link from "../components/Link.astro";
+import Card from "../components/Card.astro";
 
 const allPosts = await getCollection("posts");
 ---
 
 <Layout>
-    <h2>{pageTitle}</h2>
-    <ul>
-      {
-        allPosts.map((post) => (
-          <Link url={"/posts/" + post.slug} title={post.data.title} />
-        ))
-      }
-    </ul>
+  <h2>{pageTitle}</h2>
+  <ul>
+    {
+      allPosts.map((post) => (
+        <Card
+          url={"/posts/" + post.slug}
+          title={post.data.title}
+          date={post.data.date}
+          tags={post.data.tags}
+        />
+      ))
+    }
+  </ul>
 </Layout>
 
 <style>
   h1,
   p {
     margin-bottom: 0.5rem;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: stretch;
   }
 
   li {

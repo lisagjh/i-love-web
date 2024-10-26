@@ -1,7 +1,6 @@
 ---
-import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
-import WorkLink from "../components/WorkLink.astro";
+import Card from "../components/Card.astro";
 
 import { getCollection } from "astro:content";
 const PortfolioCollection = await getCollection("portfolio");
@@ -19,12 +18,13 @@ const pageTitle = "Gallery";
   <ul>
     {
       PortfolioCollection.map((portfolio) => (
-        <WorkLink
+        <Card
           url={`/portfolio/${portfolio.data.slug}`}
           title={portfolio.data.title}
           image={portfolio.data.image}
           description={portfolio.data.description}
           tags={portfolio.data.tags}
+          date={portfolio.data.date}
         />
       ))
     }
