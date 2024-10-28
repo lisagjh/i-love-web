@@ -10,6 +10,9 @@ Welcome to **Lisa Loves Web**! This project is made for FDND project _i-love-web
 - [Getting Started](#getting-started)
 - [License](#license)
 
+![mockup](https://github.com/user-attachments/assets/2be72e44-bc48-4c7e-9b01-baf80df8574e)
+
+
 ## Demo
 View my project here: [Lisa Loves Web](https://lisa-loves-web.vercel.app/)
 
