@@ -7,6 +7,7 @@ Welcome to **Lisa Loves Web**! This project is made for FDND project _i-love-web
 - [Demo](#demo)
 - [Features](#features)
 - [Techstack and Tools](#techstack-and-tools)
+- [Backlog](#backlog)
 - [Getting Started](#getting-started)
 - [License](#license)
 
@@ -22,6 +23,12 @@ View my project here: [Lisa Loves Web](https://lisa-loves-web.vercel.app/)
 
 ## Techstack and Tools
 This project was created using **Astro**, a static site generator.
+
+## Backlog
+
+A couple of things I need to fix on the shortterm:
+- [ ] Header: on the live version the header is a little messed up and I'm not sure why.
+- [ ] Grid on mobile: on some pages the grid gap on mobile is non existent.
 
 ## Getting Started
 To run this project locally, you can follow these steps:
