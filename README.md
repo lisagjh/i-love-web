@@ -27,6 +27,7 @@ This project was created using **Astro**, a static site generator.
 ## Backlog
 
 A couple of things I need to fix on the shortterm:
+- [ ] Styling: find and create one type of style and apply it to this project.
 - [ ] Header: on the live version the header is a little messed up and I'm not sure why.
 - [ ] Grid on mobile: on some pages the grid gap on mobile is non existent.
 
