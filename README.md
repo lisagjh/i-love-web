@@ -6,7 +6,7 @@ Welcome to **Lisa Loves Web**! This project is made for FDND project _i-love-web
 ## Table of Contents
 - [Demo](#demo)
 - [Features](#features)
-- [Techstack and Tools](#techstack)
+- [Techstack and Tools](#techstack-and-tools)
 - [Getting Started](#getting-started)
 - [License](#license)
 
