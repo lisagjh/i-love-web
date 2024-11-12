@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@astrojs/preact": "^3.5.3",
-    "@astrojs/rss": "^4.0.8",
-    "astro": "^4.15.11",
+    "@astrojs/rss": "^4.0.9",
+    "astro": "^4.16.7",
     "date-fns": "^4.1.0",
     "gsap": "^3.12.5"
   }

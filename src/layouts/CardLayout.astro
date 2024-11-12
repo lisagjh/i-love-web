@@ -1,0 +1,10 @@
+---
+import "../styles/global.css";
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+import Card from "../components/Card.astro";
+---
+
+<Layout pageTitle={frontmatter.title}>
+    <Card />
+</Layout>
