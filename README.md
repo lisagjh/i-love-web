@@ -1,54 +1,52 @@
-# Astro Starter Kit: Basics
+# Lisa Loves Web
+<img src="https://img.shields.io/badge/Astro-0C1222?style=for-the-badge&logo=astro&logoColor=FDFDFE" />
 
-```sh
-npm create astro@latest -- --template basics
-```
+Welcome to **Lisa Loves Web**! This project is made for FDND project _i-love-web_. On my website you can find my learning journal, my notes of guest talks, a small portfolio area **(work in progress)**, and some resources that I use to keep up with the everchanging frontend work field.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Table of Contents
+- [Demo](#demo)
+- [Features](#features)
+- [Techstack and Tools](#techstack-and-tools)
+- [Backlog](#backlog)
+- [Getting Started](#getting-started)
+- [License](#license)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![mockup](https://github.com/user-attachments/assets/2be72e44-bc48-4c7e-9b01-baf80df8574e)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
-## 🚀 Project Structure
+## Demo
+View my project here: [Lisa Loves Web](https://lisa-loves-web.vercel.app/)
 
-Inside of your Astro project, you'll see the following folders and files:
+## Features
+- **Responsive Design**: Built mobile first, optimized for mobile and desktop usage.
+- **Scroll Driven Animations**: Using scroll driven animations made with CSS, to make using the website more pleasurable.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Techstack and Tools
+This project was created using **Astro**, a static site generator.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Backlog
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+A couple of things I need to fix on the shortterm:
+- [ ] Styling: find and create one type of style and apply it to this project.
+- [ ] Header: on the live version the header is a little messed up and I'm not sure why.
+- [ ] Grid on mobile: on some pages the grid gap on mobile is non existent.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Getting Started
+To run this project locally, you can follow these steps:
 
-## 🧞 Commands
+1. Clone the repository:
+   ```bash
+   gh repo clone lisagjh/i-love-web
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd lisa-loves-web
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Have fun! View my project, judge my code, make changes and do whatever you want.
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
