@@ -1,0 +1,41 @@
+<footer>
+  <p>
+    View <a href="https://github.com/lisagjh/i-love-web">this repository</a> and
+    others on <a href="https://github.com/lisagjh">my github</a>.
+  </p>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/journal">Journal</a></li>
+      <li><a href="/weloveweb">We Love Web</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/other">Other</a></li>
+    </ul>
+</footer>
+
+<style>
+footer {
+  display: grid;
+  /* grid-template-columns: 35% 65%; */
+  width: 100%;
+  min-height: 7.5rem;
+  /* align-items: end; */
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: var(--text);
+}
+
+ul {
+  display: flex;
+  /* justify-content: flex-end; */
+}
+
+li {
+  list-style: "";
+  margin: 0 0.5rem;
+}
+
+p, a {
+  color: var(--background);
+  text-wrap: balance;
+}
+</style>

@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
 
 export async function getStaticPaths() {
   const portfolioCollection = await getCollection("portfolio");
@@ -13,9 +12,3 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 ---
-
-<PortfolioLayout frontmatter={entry.data}>
-  <h1>{entry.data.title}</h1>
-  <p>{entry.data.description}</p>
-  <p>{entry.data.text}</p>
-</PortfolioLayout>

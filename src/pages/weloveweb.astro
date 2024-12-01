@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Card from "../components/large/Card.astro";
 
 const allPosts = await getCollection("talks");
 ---
@@ -11,24 +11,12 @@ const allPosts = await getCollection("talks");
   <ul>
     {
       allPosts.map((talk) => (
-        <Card url={`/talks/${talk.slug}`} title={talk.data.title} date={talk.data.date} tags={talk.data.tags} />
+        <Card url={`/talks/${talk.slug}`} 
+          title={talk.data.title} 
+          description={talk.data.description}
+          date={talk.data.date} 
+          tags={talk.data.tags} />
       ))
     }
   </ul>
 </Layout>
-
-<style>
-  li {
-    padding: 0.5rem 0;
-  }
-
-  a {
-    height: 100%;
-    width: 100%;
-  }
-
-  li:hover {
-    background: var(--background);
-    border-radius: 4px;
-  }
-</style>

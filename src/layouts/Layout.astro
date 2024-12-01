@@ -1,16 +1,16 @@
 ---
+import "../styles/global.css";
+
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
 
-import "../styles/global.css";
-import "../styles/animations.css"
-import Header from "../components/Header.astro";
-import Nav from "../components/Nav.astro";
-import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
+import Header from "../components/medium/Header.astro";
+import Footer from "../components/medium/Footer.astro";
+import Nav from "../components/medium/Nav.astro";
+
 import { ViewTransitions } from "astro:transitions";
 ---
 
@@ -36,3 +36,12 @@ import { ViewTransitions } from "astro:transitions";
     </div>
   </body>
 </html>
+
+<style>
+  .wrapper {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+</style>

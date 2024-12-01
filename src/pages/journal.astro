@@ -3,7 +3,7 @@ const pageTitle = "Learning Journal";
 
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Card from "../components/large/Card.astro";
 
 const allPosts = await getCollection("posts");
 ---
@@ -23,30 +23,3 @@ const allPosts = await getCollection("posts");
     }
   </ul>
 </Layout>
-
-<style>
-  h1,
-  p {
-    margin-bottom: 0.5rem;
-  }
-
-  ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    align-items: stretch;
-  }
-
-  li {
-    padding: 0.5rem 0;
-  }
-
-  a {
-    height: 100%;
-    width: 100%;
-  }
-
-  li:hover {
-    background: var(--background);
-    border-radius: 4px;
-  }
-</style>

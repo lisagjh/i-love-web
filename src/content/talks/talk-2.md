@@ -1,7 +1,7 @@
 ---
 title: "Nico.computer"
 date: 2024-10-04
-description: "Dit is mijn learning journal van week 1 van sprint 14"
+description: "Nico Garnier heeft ons van alles verteld over storytelling op het web en creative development."
 tags: ["S13", "weloveweb", "Sveltekit", "client"]
 ---
 

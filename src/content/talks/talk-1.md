@@ -1,7 +1,7 @@
 ---
 title: "Vasilis van Gemert"
 date: 2024-09-13
-description: "Dit is mijn learning journal van week 1 van sprint 14"
+description: "Vasilis van Gemert heeft verteld over toegankelijkheid, creativiteit en zijn liefde voor nonsense."
 tags: ["S13", "weloveweb", "Sveltekit", "client"]
 ---
 

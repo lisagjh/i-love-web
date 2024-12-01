@@ -1,101 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+html {
+    --text: #121212;
+    --background: #f7f4fa;
 
-:root {
-  --main-font: "Instrument Sans", sans-serif, arial, helvetica, sans-serif;
-  --space-one: 1rem;
-  --space-two: 0.5rem;
-  --space-three: 0.25rem;
-  --space-four: 1.25rem;
-
-  --black: hsl(312, 56%, 5%);
-  --white: #fdfcfe;
-  --primary: hsl(277, 92%, 42%);
-  --secondary: hsl(357, 86%, 72%);
-  --tertiary: hsl(19, 86%, 65%);
-  --accent-one: hsl(197, 95%, 78%);
-  --accent-two: hsl(311, 80%, 83%);
+    --primary: #6B0504;
+    --secondary: #05382f;
 }
 
 * {
-  font-family: var(--main-font);
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5rem;
-}
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--white);
-}
-
-.wrapper {
-  width: 100%;
-  display: grid;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  padding: var(--space-four);
-  max-height: 100%;
-  width: 100%;
-}
-
-@media (max-width: 53rem) {
-  main {
-    align-items: center;
-  }
-}
-
-@media (min-width: 53rem) {
-  main {
-    width: 80%;
-    max-width: 60rem;
-  }
-}
-
-footer {
-  display: flex;
-  position: absolute;
-  text-align: center;
-  margin-top: 7rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--heading-font);
-  line-height: 2.5rem;
-}
-
-li {
-  list-style: "-";
-}
-
-a {
-  display: inline-block;
-  min-height: 2.5rem;
-  align-content: center;
-  color: var(--black);
-}
-
-a:hover {
-  color: var(--primary);
-}
-
-p {
-  max-width: 84ch;
+    color: var(--text);
+    background-color: var(--background);
 }
