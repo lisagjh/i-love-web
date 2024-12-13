@@ -1,22 +1,47 @@
 ---
+const pageTitle = "My Astro Learning Blog";
+import "../styles/global.css";
+
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/large/Card.astro";
+import Link from "../components/small/Link.astro";
 
-const allPosts = await getCollection("talks");
+const allTalks = await getCollection("talks");
+const allWorks = await getCollection("portfolio")
 ---
 
 <Layout title="Lisa's WeLoveWeb">
   <h2>We Love Web</h2>
   <ul>
     {
-      allPosts.map((talk) => (
-        <Card url={`/talks/${talk.slug}`} 
-          title={talk.data.title} 
-          description={talk.data.description}
-          date={talk.data.date} 
-          tags={talk.data.tags} />
+      allTalks.map((talk) => (
+        <Link url={`/talks/${talk.slug}`} title={talk.data.title} />
+      ))
+    }
+  </ul>
+
+  <h2>Portfolio</h2>
+  <ul>
+    {
+      allWorks.map((work) => (
+        <Link url={`/portfolio/${work.slug}`} title={work.data.title} />
       ))
     }
   </ul>
 </Layout>
+
+<style>
+  li {
+    padding: 0.5rem 0;
+  }
+
+  a {
+    height: 100%;
+    width: 100%;
+  }
+
+  li:hover {
+    background: var(--background);
+    border-radius: 4px;
+  }
+</style>

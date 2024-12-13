@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import TalkLayout from "../../layouts/TalkLayout.astro";
 
 export async function getStaticPaths() {
   const talkEntries = await getCollection("talks");
@@ -12,3 +13,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
+
+<TalkLayout frontmatter={entry.data}>
+  <Content />
+</TalkLayout>

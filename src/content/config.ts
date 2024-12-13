@@ -25,11 +25,11 @@ const talkCollection = defineCollection({
 });
 
 const portfolioCollection = defineCollection({
-  type: 'data',
+  type: 'content',
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    text: z.string(),
+    text: z.string().optional(),
     live: z.string().url().optional(), // Optional live URL
     repo: z.string().url().optional(), // Optional repo URL
     image: z.object({
@@ -37,8 +37,6 @@ const portfolioCollection = defineCollection({
       alt: z.string()
     }),
     tags: z.array(z.string()).optional(), // Optional tags array
-    completed: z.boolean(), // Boolean to show project completion status,
-    slug: z.string()  // Ensure slug is required
   })
 });
 

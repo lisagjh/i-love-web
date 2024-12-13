@@ -1,14 +1,20 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
+import TalkLayout from '../../layouts/TalkLayout.astro';
 
 export async function getStaticPaths() {
-  const portfolioCollection = await getCollection("portfolio");
+  const portfolioCollection = await getCollection('portfolio');
 
   return portfolioCollection.map((entry) => ({
-    params: { slug: entry.data.slug }, // Make sure to access slug through 'data'
+    params: { slug: entry.data.slug },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
+const { Content } = await entry.render();
 ---
+
+<TalkLayout frontmatter={entry.data}>
+  <Content />
+</TalkLayout>
