@@ -1,15 +1,25 @@
 @font-face {
-    font-family: "Grand Bageur";
-    src: url(/fonts/GrandBageur.ttf) format(ttf);
+    font-family: "Libre Franklin";
+    src: url(/fonts/LibreFranklin-var.ttf) format("truetype");
 }
 
+@font-face {
+    font-family: "Instrument Sans";
+    src: url(/fonts/InstrumentSans-var.ttf) format("truetype");
+}
 
 html {
+
+    --heading: "Libre Franklin", Arial, Helvetica, sans-serif;
+    --paragraph: "Instrument Sans", Arial, Helvetica, sans-serif;
+
     --text: #121212;
+    --text-light: #f7f4fa;
     --background: #f7f4fa;
 
-    --primary: #6B0504;
-    --secondary: #05382f;
+    --color-one: #420a96;
+    
+    --accent-one: #9B9ECE;
 }
 
 * {
@@ -19,8 +29,18 @@ html {
 }
 
 body {
-    /* font-family: "Grand Bageur", sans-serif;*/
-    /* font-family: 'Times New Roman', Times, serif; */
+    font-family: var(--paragraph);
     color: var(--text);
     background-color: var(--background);
+}
+
+
+/* general */
+
+li {
+    list-style: "";
+}
+
+a {
+    color: currentColor;
 }
