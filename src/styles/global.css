@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "Grand Bageur";
+    src: url(/fonts/GrandBageur.ttf) format(ttf);
+}
+
+
 html {
     --text: #121212;
     --background: #f7f4fa;
@@ -8,12 +14,13 @@ html {
 
 * {
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 body {
+    /* font-family: "Grand Bageur", sans-serif;*/
+    /* font-family: 'Times New Roman', Times, serif; */
     color: var(--text);
     background-color: var(--background);
 }
