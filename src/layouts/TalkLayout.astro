@@ -23,6 +23,35 @@ const { frontmatter } = Astro.props;
     margin-bottom: 13rem;
   }
 
+  
+  /* Styling <code> elements */
+    .content :global(code) {
+    font-family: 'Courier New', Courier, monospace; /* Use a monospaced font */
+    background-color: #393939; /* Light gray background */
+    color: #ececec; /* Nice pop of color */
+    padding: 0.2rem 0.4rem; /* Padding inside the code block */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    white-space: nowrap; /* Prevent wrapping */
+  }
+
+  /* Add extra styling for code blocks inside <pre> */
+  .content :global(pre) {
+    background-color: #272822; /* Dark background for code blocks */
+    color: #f8f8f2; /* Light text color */
+    padding: 1rem; /* Add padding */
+    border-radius: 8px; /* Rounded corners */
+    overflow-x: auto; /* Enable horizontal scrolling for long lines */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+    font-size: 0.9rem; /* Slightly smaller font size */
+  }
+
+  .content :global(pre > code) {
+    background: none; /* Remove background from nested <code> inside <pre> */
+    color: inherit; /* Inherit color from <pre> */
+    padding: 0; /* Remove padding from nested <code> */
+  }
+
   .content :global(h1),
   .content :global(h2),
   .content :global(h3),
@@ -33,7 +62,22 @@ const { frontmatter } = Astro.props;
   }
 
   .content :global(li) {
+    margin-bottom: 0.5rem;
     margin-left: 1rem;
     list-style: disc;
+  }
+
+  .content :global(li:first-of-type) {
+    margin-top: 1.5rem;
+  }
+
+
+  .content :global(li:last-of-type) {
+    margin-bottom: 1.5rem;
+  }
+
+
+  .content :global(hr) {
+    margin: 2rem 0;
   }
 </style>
