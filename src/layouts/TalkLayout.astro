@@ -2,12 +2,14 @@
 import "../styles/global.css";
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
+const formattedDate = frontmatter.date ? new Date(frontmatter.date).toISOString().slice(0, 10) : "No Date Available"; // Provide fallback
+
 ---
 
 <Layout pageTitle={frontmatter.title}>
   <article>
     <h2>{frontmatter.title}</h2>
-    <p>{frontmatter.date.toString().slice(0, 10)}</p>
+    <p>{formattedDate}</p> 
     <p><em>{frontmatter.description}</em></p>
     <section class="content">
       <slot />

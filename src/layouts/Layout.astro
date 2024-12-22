@@ -5,7 +5,6 @@ interface Props {
   title: string;
 }
 
-import Header from "../components/medium/Header.astro";
 import Footer from "../components/medium/Footer.astro";
 import Nav from "../components/medium/Nav.astro";
 
@@ -25,7 +24,6 @@ import { ViewTransitions } from "astro:transitions";
   <body transition:animate="fade">
     <ViewTransitions />
     <div class="wrapper">
-      <Header />
       <Nav />
       <main>
         <slot />

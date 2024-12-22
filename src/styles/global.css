@@ -17,7 +17,9 @@ html {
     --text-light: #f7f4fa;
     --background: #f7f4fa;
 
-    --color-one: #420a96;
+    --color-one: #383838;
+    --color-two: #646464;
+    --color-three: #c2c2c2;
     
     --accent-one: #9B9ECE;
 }
