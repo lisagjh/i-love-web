@@ -8,6 +8,13 @@ interface Props {
 import Footer from "../components/medium/Footer.astro";
 import Nav from "../components/medium/Nav.astro";
 
+import { Breadcrumbs } from "astro-breadcrumbs";
+
+import "astro-breadcrumbs/breadcrumbs.css";
+
+// or import the scss file
+// import "astro-breadcrumbs/breadcrumbs.scss";
+
 import { ViewTransitions } from "astro:transitions";
 ---
 
@@ -25,6 +32,8 @@ import { ViewTransitions } from "astro:transitions";
     <ViewTransitions />
     <div class="wrapper">
       <Nav />
+
+      <Breadcrumbs />
       <main>
         <slot />
       </main>

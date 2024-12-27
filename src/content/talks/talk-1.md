@@ -2,6 +2,9 @@
 title: "Vasilis van Gemert"
 date: 2024-09-13
 description: "Vasilis van Gemert heeft verteld over toegankelijkheid, creativiteit en zijn liefde voor nonsense."
+image:
+  url: "/public/vasilis.png"
+  alt: "The Astro logo on a dark background with a pink glow."
 tags: ["S13", "weloveweb", "Sveltekit", "client"]
 ---
 

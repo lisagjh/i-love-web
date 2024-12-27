@@ -5,32 +5,34 @@ const current = Astro.url.pathname;
 
 <input type="checkbox" id="menu-toggle" class="menu-toggle" />
 <label for="menu-toggle" class="menu-button"> ☰ Menu </label>
+
 <nav class="menu">
   <ul>
     <li>
       <a href="/" class={current === "/" ? "active" : ""}>Home</a>
     </li>
     <li>
-      <a href="/journal" class={current === "/journal" ? "active" : ""}
-        >Journal</a
-      >
+      <a href="/journal" class={current === "/journal" ? "active" : ""}>Journal</a>
     </li>
     <li>
-      <a href="/weloveweb" class={current === "/weloveweb" ? "active" : ""}
-        >We Love Web</a
-      >
+      <a href="/weloveweb" class={current === "/weloveweb" ? "active" : ""}>We Love Web</a>
     </li>
     <li>
-      <a href="/gallery" class={current === "/gallery" ? "active" : ""}
-        >Gallery</a
-      >
+      <a href="/gallery" class={current === "/gallery" ? "active" : ""}>Gallery</a>
     </li>
   </ul>
-  <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+  <!-- Close Button - Same checkbox toggles the menu -->
   <label for="menu-toggle" class="menu-button close"> X close </label>
 </nav>
 
+
+
 <style>
+  .active {
+    background-color: var(--color-three);
+  }
+
   .menu-toggle {
     display: none;
   }
@@ -45,6 +47,10 @@ const current = Astro.url.pathname;
     border-radius: 4px;
     font-size: 1.2rem;
     user-select: none;
+  }
+
+  label {
+    view-transition-name: label;
   }
 
   /* Style the nav menu */

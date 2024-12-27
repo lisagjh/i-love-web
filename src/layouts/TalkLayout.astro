@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
-const formattedDate = frontmatter.date ? new Date(frontmatter.date).toISOString().slice(0, 10) : "No Date Available"; // Provide fallback
+const formattedDate = frontmatter.date ? new Date(frontmatter.date).toISOString().slice(0, 10) : "No Date Available"; // fallback
 
 ---
 
@@ -11,6 +11,9 @@ const formattedDate = frontmatter.date ? new Date(frontmatter.date).toISOString(
     <h2>{frontmatter.title}</h2>
     <p>{formattedDate}</p> 
     <p><em>{frontmatter.description}</em></p>
+
+    <img src={frontmatter.image} alt="">
+
     <section class="content">
       <slot />
     </section>
