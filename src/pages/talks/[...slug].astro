@@ -1,7 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import TalkLayout from "../../layouts/TalkLayout.astro";
+import Breadcrumb from "../../components/small/Breadcrumb.astro";
 
+// Generate static paths
 export async function getStaticPaths() {
   const talkEntries = await getCollection("talks");
   return talkEntries.map((entry) => ({
@@ -15,5 +17,10 @@ const { Content } = await entry.render();
 ---
 
 <TalkLayout frontmatter={entry.data}>
+  <Breadcrumb 
+    currentPage={entry.data.title} 
+    parentPage={{ title: "We Love Web", url: "/weloveweb" }} 
+    hideBreadcrumbs={true} 
+  />
   <Content />
 </TalkLayout>

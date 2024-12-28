@@ -1,48 +1,78 @@
 @font-face {
-    font-family: "Libre Franklin";
-    src: url(/fonts/LibreFranklin-var.ttf) format("truetype");
+  font-family: "Libre Franklin";
+  src: url(/fonts/LibreFranklin-var.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: "Instrument Sans";
-    src: url(/fonts/InstrumentSans-var.ttf) format("truetype");
+  font-family: "Instrument Sans";
+  src: url(/fonts/InstrumentSans-var.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Grand";
+  src: url(/fonts/Grand-Bageur.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Commit Mono";
+  src: url(/fonts/Commit-Mono.woff2) format("woff2");
 }
 
 html {
+  --heading: "Grand", Arial, Helvetica, sans-serif;
+  --paragraph: "Commit Mono", Arial, Helvetica, sans-serif;
+  --standard-heading: "Libre Franklin", Arial, Helvetica, sans-serif;
+  --standard-paragraph: "Instrument Sans", Arial, Helvetica, sans-serif;
 
-    --heading: "Libre Franklin", Arial, Helvetica, sans-serif;
-    --paragraph: "Instrument Sans", Arial, Helvetica, sans-serif;
+  --text: #121212;
+  --text-light: #f7f4fa;
+  --background: #f7f4fa;
 
-    --text: #121212;
-    --text-light: #f7f4fa;
-    --background: #f7f4fa;
+  --color-one: #383838;
+  --color-two: #646464;
+  --color-three: #c2c2c2;
 
-    --color-one: #383838;
-    --color-two: #646464;
-    --color-three: #c2c2c2;
-    
-    --accent-one: #9B9ECE;
+  --accent-one: #9b9ece;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: var(--paragraph);
-    color: var(--text);
-    background-color: var(--background);
+  font-family: var(--paragraph);
+  color: var(--text);
+  background-color: var(--background);
 }
 
+/* text */
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading);
+}
+
+h1 {
+  font-size: 52px;
+}
+
+h2 {
+  font-size: 46px;
+}
+
+h3 {
+  font-size: 36px;
+}
 
 /* general */
 
 li {
-    list-style: "";
+  list-style: "";
 }
 
 a {
-    color: currentColor;
+  color: currentColor;
 }

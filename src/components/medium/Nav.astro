@@ -4,97 +4,156 @@ const current = Astro.url.pathname;
 ---
 
 <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-<label for="menu-toggle" class="menu-button"> ☰ Menu </label>
+<label for="menu-toggle" class="menu-button">
+  <svg
+    width="18"
+    height="14"
+    viewBox="0 0 18 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M2 2H16" stroke="#121212" stroke-width="2.5" stroke-linecap="round"
+    ></path>
+    <path d="M2 7H16" stroke="#121212" stroke-width="2.5" stroke-linecap="round"
+    ></path>
+    <path
+      d="M2 12H16"
+      stroke="#121212"
+      stroke-width="2.5"
+      stroke-linecap="round"></path>
+  </svg>
+  Menu
+</label>
 
 <nav class="menu">
+  <!-- Close Button - Same checkbox toggles the menu -->
+  <!-- <label for="menu-toggle" class="menu-button close">
+    <svg
+      width="18"
+      height="14"
+      viewBox="0 0 18 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4 2L13.8995 11.8995"
+        stroke="#121212"
+        stroke-width="2.5"
+        stroke-linecap="round"></path>
+      <path
+        d="M4 11.8995L13.8995 1.99998"
+        stroke="#121212"
+        stroke-width="2.5"
+        stroke-linecap="round"></path>
+    </svg>
+    close
+  </label> -->
+
   <ul>
     <li>
       <a href="/" class={current === "/" ? "active" : ""}>Home</a>
     </li>
     <li>
-      <a href="/journal" class={current === "/journal" ? "active" : ""}>Journal</a>
+      <a href="/journal" class={current === "/journal" ? "active" : ""}
+        >Journal</a
+      >
     </li>
     <li>
-      <a href="/weloveweb" class={current === "/weloveweb" ? "active" : ""}>We Love Web</a>
-    </li>
-    <li>
-      <a href="/gallery" class={current === "/gallery" ? "active" : ""}>Gallery</a>
+      <a href="/weloveweb" class={current === "/weloveweb" ? "active" : ""}
+        >We Love Web</a
+      >
     </li>
   </ul>
-
-  <!-- Close Button - Same checkbox toggles the menu -->
-  <label for="menu-toggle" class="menu-button close"> X close </label>
 </nav>
 
-
-
 <style>
-  .active {
-    background-color: var(--color-three);
-  }
-
   .menu-toggle {
     display: none;
   }
 
+  svg path {
+    stroke: #fff;
+  }
+
   /* Style the menu button */
   .menu-button {
+    position:fixed;
     display: inline-block;
     cursor: pointer;
     background-color: var(--color-two);
     color: white;
+    height: 2.5rem;
+    width: 100vw;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
+    border-radius: 0 0 0.2rem 0.2rem;
+    box-shadow: 1px 1px 2px var(--color-one);
     font-size: 1.2rem;
     user-select: none;
+    z-index: 100;
   }
 
-  label {
-    view-transition-name: label;
-  }
-
-  /* Style the nav menu */
-  .menu {
+  nav {
     position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #f4f4f4;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    top: 2rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    background-color: var(--background);
+    transition: all 0.35s ease-in-out;
+    z-index: 90;
   }
 
-  .menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  ul {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    overflow: scroll;
+    text-transform: uppercase;
+    font-size: larger;
+    font-weight:;
   }
 
-  .menu li {
-    border-bottom: 1px solid #ddd;
+  ul::-webkit-scrollbar {
+    display: none;
   }
 
-  .menu a {
+  li {
+    height: 5rem;
+    min-width: fit-content;
+    border-bottom: 1px solid var(--color-three);
+  }
+
+  a {
     display: block;
-    padding: 1rem;
-    color: #333;
+    align-self: center;
+    min-width: 100%;
+    min-height: 100%;
+    padding: 0.75rem 1.5rem;
+    padding: 2.5rem 1.5rem 0 1.5rem;
     text-decoration: none;
+    font-size: larger;
   }
 
-  .menu a:hover {
-    background-color: #e4e4e4;
+  .active {
+    background-color: var(--color-three);
+    transition: 0.25s ease-in-out;
   }
 
-  label.close {
-    width: 100%;
-    border-radius: 0px;
-
+  .active::before {
+    content: "";
+    position: absolute;
+    height: 1.5rem;
+    width: 0.4rem;
+    translate: -0.75rem 0rem;
+    vertical-align: text-top;
+    border-radius: 0.1rem;
+    background-color: var(--color-one);
   }
 
-  /* Show the menu when the checkbox is checked */
-  .menu-toggle:checked + .menu-button + .menu {
-    max-height: 300px; /* Adjust based on the height of your menu */
+  /* show menu when checkbox is checked */
+  .menu-toggle:checked ~ nav {
+    margin-top: 0;
+    transform: translateY(0);
+    opacity: 1;
+    transition: opacity .15s ease-in-out, transform 0.3s ease-out;
   }
 </style>
