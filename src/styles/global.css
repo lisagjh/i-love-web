@@ -28,7 +28,7 @@ html {
   --text-light: #f7f4fa;
   --background: #f7f4fa;
 
-  --color-one: #383838;
+  --color-one: #363956;
   --color-two: #646464;
   --color-three: #c2c2c2;
 
@@ -55,18 +55,6 @@ h3 {
   font-family: var(--heading);
 }
 
-h1 {
-  font-size: 52px;
-}
-
-h2 {
-  font-size: 46px;
-}
-
-h3 {
-  font-size: 36px;
-}
-
 /* general */
 
 li {
@@ -75,4 +63,9 @@ li {
 
 a {
   color: currentColor;
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--color-one);
 }
