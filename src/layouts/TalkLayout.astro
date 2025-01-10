@@ -2,17 +2,20 @@
 import "../styles/global.css";
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
-const formattedDate = frontmatter.date ? new Date(frontmatter.date).toISOString().slice(0, 10) : "No Date Available"; // fallback
-
+const formattedDate = frontmatter.date
+  ? new Date(frontmatter.date).toISOString().slice(0, 10)
+  : "No Date Available"; // fallback
 ---
 
 <Layout pageTitle={frontmatter.title}>
+  <a href="/journal" class="back-to">Back to Learning Journal</a>
+
   <article>
     <h2>{frontmatter.title}</h2>
-    <p>{formattedDate}</p> 
+    <p>{formattedDate}</p>
     <p><em>{frontmatter.description}</em></p>
 
-    <img src={frontmatter.image} alt="">
+    <img src={frontmatter.image} alt="" />
 
     <section class="content">
       <slot />
@@ -21,16 +24,33 @@ const formattedDate = frontmatter.date ? new Date(frontmatter.date).toISOString(
 </Layout>
 
 <style>
+  .back-to {
+    display: inline-block;
+    margin: 1.5rem;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+  }
+
+  .back-to::before {
+    content: "<-";
+  }
+
+  .back-to:hover {
+    color: var(--accent-one);
+    text-decoration: underline;
+    scale: 1.01;
+  }
+
   article {
     width: 100%;
     max-width: 65ch;
     margin: 0 auto;
     margin-bottom: 13rem;
   }
-  
+
   /* Styling <code> elements */
-    .content :global(code) {
-    font-family: 'Courier New', Courier, monospace; /* Use a monospaced font */
+  .content :global(code) {
+    font-family: "Courier New", Courier, monospace; /* Use a monospaced font */
     background-color: #393939; /* Light gray background */
     color: #ececec; /* Nice pop of color */
     padding: 0.2rem 0.4rem; /* Padding inside the code block */
@@ -46,7 +66,7 @@ const formattedDate = frontmatter.date ? new Date(frontmatter.date).toISOString(
     padding: 1rem; /* Add padding */
     border-radius: 8px; /* Rounded corners */
     overflow-x: auto; /* Enable horizontal scrolling for long lines */
-    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+    font-family: "Courier New", Courier, monospace; /* Monospaced font */
     font-size: 0.9rem; /* Slightly smaller font size */
   }
 
@@ -75,11 +95,9 @@ const formattedDate = frontmatter.date ? new Date(frontmatter.date).toISOString(
     margin-top: 1.5rem;
   }
 
-
   .content :global(li:last-of-type) {
     margin-bottom: 1.5rem;
   }
-
 
   .content :global(hr) {
     margin: 2rem 0;
@@ -93,5 +111,4 @@ const formattedDate = frontmatter.date ? new Date(frontmatter.date).toISOString(
     border-top: 1px solid var(--color-one);
     border-right: 1px solid var(--color-one);
   }
-  
 </style>

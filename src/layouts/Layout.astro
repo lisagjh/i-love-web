@@ -7,8 +7,6 @@ interface Props {
 
 import Footer from "../components/medium/Footer.astro";
 import Nav from "../components/medium/Nav.astro";
-import Breadcrumb from "../components/small/Breadcrumb.astro"
-import { ViewTransitions } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -22,10 +20,7 @@ import { ViewTransitions } from "astro:transitions";
     <title>Lisa loves web</title>
   </head>
   <body transition:animate="fade">
-    <ViewTransitions />
     <Nav />
-
-    <Breadcrumb />
 
     <main>
       <slot />
