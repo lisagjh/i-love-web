@@ -3,7 +3,7 @@
 
   const mySketch = (p) => {
     const elementsX = 9;
-    const elementsY = 71;
+    const elementsY = 31;
     const charset = "∙··•˚̊*⁰";
     let containerHeight;
     const rotationSpeed = 0.2; // Adjust this value to change speed (lower = slower, higher = faster)
@@ -86,7 +86,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: clamp(400px, 100%, 600px);
+    height: clamp(var(--_min-height), 100%, var(--_max-height));
     z-index: -5;
   }
 </style>
