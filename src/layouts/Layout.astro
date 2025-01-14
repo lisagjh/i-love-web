@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { ClientRouter } from 'astro:transitions';
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -8,7 +8,7 @@ interface Props {
 const current = Astro.url.pathname;
 
 import Footer from "../components/medium/Footer.astro";
-import Nav from "../components/medium/Nav.astro";
+import Header from "../components/medium/Header.astro";
 ---
 
 <!doctype html>
@@ -23,8 +23,7 @@ import Nav from "../components/medium/Nav.astro";
     <ClientRouter />
   </head>
   <body transition:animate="fade">
-
-    <Nav />
+    <Header />
     <a href="/" class={current === "/" ? "hidden" : "back-to"}>back home</a>
 
     <main>

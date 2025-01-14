@@ -3,46 +3,50 @@
 
   const mySketch = (p) => {
     const elementsX = 11;
-    const elementsY = 51;
+    const elementsY = 81;
     const charset = "∙··•˚̊*⁰";
     // let charset = "✨⭐️✨⭐️✨⭐️"
     // let charset = "Lisa van der Hoorn";
     let font;
 
     p.setup = () => {
-      p.createCanvas(window.innerWidth, window.innerHeight); // Add canvas creation
+      p.createCanvas(window.innerWidth, window.innerHeight);
     };
-    
+
+    p.windowResized = () => {
+      p.resizeCanvas(window.innerWidth, window.innerHeight);
+    };
+
     //! i cant figure out how to load the font correctly from the public folder?
     p.preload = () => {
       // font = p.loadFont("/fonts/IBMPlexSans-Bold.wotf");
     };
-    
+
     p.draw = () => {
       p.background(255);
-  
+
       p.fill(0);
       p.noStroke();
-  
+
       // Use default font for now
       p.textAlign(p.CENTER, p.CENTER);
-      p.textSize(p.height / elementsY * 1.7);
-  
+      p.textSize((p.height / elementsY) * 1.7);
+
       for (let y = 0; y < elementsY + 1; y++) {
         for (let x = 0; x < charset.length + 1; x++) {
           let posY = p.map(y, 0, elementsY, 0, p.height);
-  
+
           let magX = p.map(
             p.sin(p.radians(posY * 20 + p.frameCount)),
             -1,
             1,
-            -p.width * 0.4,
+            -p.width * 0.3,
             200
           );
           let posX = p.map(x, 0, elementsX, -magX, magX);
-  
+
           let selector = x;
-  
+
           p.push();
           p.translate(p.width / 2 + posX, posY);
           p.text(charset[selector], 0, 0);
@@ -75,6 +79,8 @@
 
 <style>
   div {
+    max-width: 100vw;
+    overflow: hidden;
     position: absolute;
     z-index: -1;
   }
