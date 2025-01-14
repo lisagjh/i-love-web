@@ -13,34 +13,33 @@ import Nav from "./Nav.astro";
 </header>
 
 <style>
-    header {
-        --_min-height: 200px;
-        --_max-height: 450px;
-        height: clamp(var(--_min-height), 100%, var(--_max-height));
-        overflow: hidden;
-    }
+  header {
+    --_min-height: 200px;
+    --_max-height: 450px;
+    height: clamp(var(--_min-height), 100%, var(--_max-height));
+    overflow: hidden;
+  }
 
-    .content {
-        display: grid;
-        justify-content: center;
-        padding: 3rem 1.5rem;
-    }
+  .content {
+    display: grid;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+  }
 
-    h1 {
-        width: fit-content;
-        anchor-name: --heading;
-        font-size: 7rem;
-        z-index: 10;
-    }
+  h1 {
+    width: fit-content;
+    anchor-name: --heading;
+    font-size: 7rem;
+    z-index: 10;
+  }
 
-    p {
-        font-family: var(--paragraph-type-two);
-        letter-spacing: -1px;
-        position: absolute;
-        position-anchor: --heading;
-        top: anchor(--heading bottom);
-        left: anchor(--heading left);
-        margin-top: -1.9rem;
-    }
-
+  p {
+    font-family: var(--paragraph-type-two);
+    letter-spacing: -1px;
+    position: absolute;
+    position-anchor: --heading;
+    top: anchor(--heading bottom);
+    left: anchor(--heading left);
+    margin-top: -1.9rem;
+  }
 </style>

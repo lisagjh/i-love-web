@@ -1,12 +1,12 @@
 ---
 import "../styles/global.css";
 
-import Layout from "../layouts/Layout.astro";
+import HomeLayout from "../layouts/HomeLayout.astro";
 
 const pageTitle = "Home";
 ---
 
-<Layout title={pageTitle}>
+<HomeLayout title={pageTitle}>
   <div class="wrapper">
     <ul>
       <li>
@@ -22,7 +22,7 @@ const pageTitle = "Home";
       </li>
     </ul>
   </div>
-</Layout>
+</HomeLayout>
 
 <style>
   .wrapper {

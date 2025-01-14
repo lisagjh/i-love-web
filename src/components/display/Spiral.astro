@@ -70,10 +70,33 @@
     }, 0);
   };
 
-  document.addEventListener("DOMContentLoaded", () => {
+  // Function to initialize or reinitialize the sketch
+  function initializeSketch() {
     const container = document.getElementById("sketch-container");
     if (container) {
+      // Clear any existing canvas
+      const existingCanvas = container.querySelector("canvas");
+      if (existingCanvas) {
+        existingCanvas.remove();
+      }
       new p5(mySketch, container);
+    }
+  }
+
+  // Initialize on page load
+  document.addEventListener("DOMContentLoaded", initializeSketch);
+
+  // Initialize on view transitions
+  document.addEventListener("astro:page-load", initializeSketch);
+
+  // Clean up on page unload
+  document.addEventListener("astro:before-preparation", () => {
+    const container = document.getElementById("sketch-container");
+    if (container) {
+      const canvas = container.querySelector("canvas");
+      if (canvas) {
+        canvas.remove();
+      }
     }
   });
 </script>
