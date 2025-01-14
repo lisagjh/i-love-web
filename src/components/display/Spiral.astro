@@ -9,8 +9,8 @@
     const rotationSpeed = 0.2; // Adjust this value to change speed (lower = slower, higher = faster)
 
     p.setup = () => {
-      const header = document.querySelector("header");
-      containerHeight = header ? header.offsetHeight : window.innerHeight;
+      const container = document.querySelector("div");
+      containerHeight = container ? container.offsetHeight : window.innerHeight;
       p.createCanvas(window.innerWidth, containerHeight);
     };
 
@@ -36,7 +36,7 @@
 
     p.draw = () => {
       p.background(255);
-      p.fill(0);
+      p.fill(200, 200, 200);
       p.noStroke();
 
       p.textAlign(p.CENTER, p.CENTER);
@@ -81,12 +81,12 @@
 <div id="sketch-container"></div>
 
 <style>
-  #sketch-container {
+  div {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 0;
+    height: clamp(400px, 100%, 600px);
+    z-index: -5;
   }
 </style>

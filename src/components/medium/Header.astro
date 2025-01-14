@@ -6,7 +6,7 @@ import Nav from "./Nav.astro";
 <header>
   <Nav />
   <Spiral />
-  <div class="content">
+  <div class="content" id="sketch-container">
     <h1>LISA</h1>
     <p>van der Hoorn</p>
   </div>
@@ -14,7 +14,7 @@ import Nav from "./Nav.astro";
 
 <style>
     header {
-        min-height: 500px;
+        height: clamp(400px, 100%, 600px);
         overflow: hidden;
     }
 
