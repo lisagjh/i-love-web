@@ -28,6 +28,7 @@ html {
   --paragraph: "IBM Plex Sans Regular", Arial, Helvetica, sans-serif;
   --standard-heading: "Grand", Arial, Helvetica, sans-serif;
   --standard-paragraph: "IBM Plex Sans Regular", Arial, Helvetica, sans-serif;
+  --paragraph-type-two: "Commit Mono", monospace;
 }
 
 * {
