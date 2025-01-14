@@ -18,21 +18,16 @@
   src: url(/fonts/Commit-Mono.woff2) format("woff2");
 }
 
+@font-face {
+  font-family: "IBM Plex Sans Regular";
+  src: url(/fonts/IBMPlexSans-Regular.woff2) format("woff2");
+}
+
 html {
   --heading: "Grand", Arial, Helvetica, sans-serif;
-  --paragraph: "Commit Mono", Arial, Helvetica, sans-serif;
-  --standard-heading: "Libre Franklin", Arial, Helvetica, sans-serif;
-  --standard-paragraph: "Instrument Sans", Arial, Helvetica, sans-serif;
-
-  --text: #121212;
-  --text-light: #f7f4fa;
-  --background: #f7f4fa;
-
-  --color-one: #363956;
-  --color-two: #646464;
-  --color-three: #c2c2c2;
-
-  --accent-one: #ffaa00;
+  --paragraph: "IBM Plex Sans Regular", Arial, Helvetica, sans-serif;
+  --standard-heading: "Grand", Arial, Helvetica, sans-serif;
+  --standard-paragraph: "IBM Plex Sans Regular", Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -43,7 +38,6 @@ html {
 
 body {
   font-family: var(--paragraph);
-  color: var(--text);
   background-color: var(--background);
 }
 
@@ -66,10 +60,6 @@ a {
   font-weight: 600;
 }
 
-a:hover {
-  color: var(--color-one);
-}
-
 
 /** reusable classes */
 
@@ -85,7 +75,6 @@ a:hover {
 }
 
 .back-to:hover {
-  color: var(--accent-one);
   text-decoration: underline;
   scale: 1.01;
 }

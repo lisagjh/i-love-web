@@ -1,0 +1,81 @@
+<script>
+  import p5 from "p5";
+
+  const mySketch = (p) => {
+    const elementsX = 11;
+    const elementsY = 51;
+    const charset = "∙··•˚̊*⁰";
+    // let charset = "✨⭐️✨⭐️✨⭐️"
+    // let charset = "Lisa van der Hoorn";
+    let font;
+
+    p.setup = () => {
+      p.createCanvas(window.innerWidth, window.innerHeight); // Add canvas creation
+    };
+    
+    //! i cant figure out how to load the font correctly from the public folder?
+    p.preload = () => {
+      // font = p.loadFont("/fonts/IBMPlexSans-Bold.wotf");
+    };
+    
+    p.draw = () => {
+      p.background(255);
+  
+      p.fill(0);
+      p.noStroke();
+  
+      // Use default font for now
+      p.textAlign(p.CENTER, p.CENTER);
+      p.textSize(p.height / elementsY * 1.7);
+  
+      for (let y = 0; y < elementsY + 1; y++) {
+        for (let x = 0; x < charset.length + 1; x++) {
+          let posY = p.map(y, 0, elementsY, 0, p.height);
+  
+          let magX = p.map(
+            p.sin(p.radians(posY * 20 + p.frameCount)),
+            -1,
+            1,
+            -p.width * 0.4,
+            200
+          );
+          let posX = p.map(x, 0, elementsX, -magX, magX);
+  
+          let selector = x;
+  
+          p.push();
+          p.translate(p.width / 2 + posX, posY);
+          p.text(charset[selector], 0, 0);
+          p.pop();
+        }
+      }
+    };
+  };
+
+  // Initialize p5 instance when the script runs in the browser
+  let sketchInstance;
+
+  // Wait for the DOM to load before attaching the p5 instance
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("sketch-container");
+    if (container) {
+      sketchInstance = new p5(mySketch, container);
+    }
+  });
+
+  // Clean up the p5 instance when navigating away or reloading
+  window.addEventListener("beforeunload", () => {
+    if (sketchInstance) {
+      sketchInstance.remove();
+    }
+  });
+</script>
+
+<div id="sketch-container"></div>
+
+<style>
+  div {
+    position: absolute;
+    z-index: -1;
+  }
+</style>
