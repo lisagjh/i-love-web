@@ -5,40 +5,49 @@
     const elementsX = 9;
     const elementsY = 71;
     const charset = "∙··•˚̊*⁰";
-    // let charset = "✨⭐️✨⭐️✨⭐️";
-    // let charset = "Lisa van der Hoorn";
-    let font;
+    let containerHeight;
+    const rotationSpeed = 0.2; // Adjust this value to change speed (lower = slower, higher = faster)
 
     p.setup = () => {
-      p.createCanvas(window.innerWidth, window.innerHeight);
+      const header = document.querySelector("header");
+      containerHeight = header ? header.offsetHeight : window.innerHeight;
+      p.createCanvas(window.innerWidth, containerHeight);
+    };
+
+    const updateCanvasSize = () => {
+      const header = document.querySelector("header");
+      containerHeight = header ? header.offsetHeight : window.innerHeight;
+      p.resizeCanvas(window.innerWidth, containerHeight);
     };
 
     p.windowResized = () => {
-      p.resizeCanvas(window.innerWidth, window.innerHeight);
+      updateCanvasSize();
     };
 
-    //TODO - i cant figure out how to load the font correctly from the public folder?
-    // p.preload = () => {
-    //   font = p.loadFont("/public/fonts/IBMPlexSans-Bold.wotf");
-    // };
+    const setupResizeObserver = () => {
+      const header = document.querySelector("header");
+      if (header) {
+        const resizeObserver = new ResizeObserver(() => {
+          updateCanvasSize();
+        });
+        resizeObserver.observe(header);
+      }
+    };
 
     p.draw = () => {
       p.background(255);
-
       p.fill(0);
       p.noStroke();
 
-      // Use default font for now
       p.textAlign(p.CENTER, p.CENTER);
-      p.textSize(p.height / elementsY * 2);
+      p.textSize((containerHeight / elementsY) * 2);
 
-      // Create the elements
       for (let y = 0; y < elementsY + 1; y++) {
         for (let x = 0; x < charset.length + 1; x++) {
-          let posY = p.map(y, 0, elementsY, 0, p.height);
+          let posY = p.map(y, 0, elementsY, 0, containerHeight);
 
           let magX = p.map(
-            p.sin(p.radians(posY * 20 + p.frameCount)),
+            p.sin(p.radians(posY * 20 + p.frameCount * rotationSpeed)), // Added rotationSpeed here
             -1,
             1,
             -p.width * 0.4,
@@ -55,23 +64,16 @@
         }
       }
     };
+
+    setTimeout(() => {
+      setupResizeObserver();
+    }, 0);
   };
 
-  // Initialize p5 instance when the script runs in the browser
-  let sketchInstance;
-
-  // Wait for the DOM to load before attaching the p5 instance
   document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("sketch-container");
     if (container) {
-      sketchInstance = new p5(mySketch, container);
-    }
-  });
-
-  // Clean up the p5 instance when navigating away or reloading
-  window.addEventListener("beforeunload", () => {
-    if (sketchInstance) {
-      sketchInstance.remove();
+      new p5(mySketch, container);
     }
   });
 </script>
@@ -79,10 +81,12 @@
 <div id="sketch-container"></div>
 
 <style>
-  div {
-    max-width: 100vw;
-    overflow: hidden;
+  #sketch-container {
     position: absolute;
-    z-index: -5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
   }
 </style>
