@@ -85,6 +85,7 @@ a {
 }
 
 /** inverted border radius on the bottom of the element */
+/* element-color is defined on element level */
 .inverted-border-radius-bottom::before {
   content: "";
   position: absolute;

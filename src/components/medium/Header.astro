@@ -14,10 +14,11 @@ import Nav from "./Nav.astro";
 
 <style>
   header {
-    --_min-height: 200px;
-    --_max-height: 450px;
-    height: clamp(var(--_min-height), 100%, var(--_max-height));
+    --min-height: 13rem;
+    --max-height: 18rem;
+    height: clamp(var(--min-height), 100%, var(--max-height));
     overflow: hidden;
+    margin-bottom: 1rem;
   }
 
   .content {

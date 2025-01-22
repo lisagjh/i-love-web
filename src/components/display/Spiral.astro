@@ -4,10 +4,10 @@
   const mySketch = (p) => {
     const elementsX = 9;
     const elementsY = 31;
-    // const charset = "∙··•˚̊*⁰";
-    const charset = ".∙··•˚̊*⁰";
+    const charset = "∙··•˚̊*⁰";
+
     let containerHeight;
-    const rotationSpeed = 0.4; // Adjust this value to change speed (lower = slower, higher = faster)
+    const rotationSpeed = .5; // Adjust this value to change speed (lower = slower, higher = faster)
 
     p.setup = () => {
       const container = document.querySelector("div");
@@ -51,8 +51,8 @@
             p.sin(p.radians(posY * 20 + p.frameCount * rotationSpeed)), // Added rotationSpeed here
             -1,
             1,
-            -p.width * 0.4,
-            200
+            -p.width * 0.6,
+            200,
           );
           let posX = p.map(x, 0, elementsX, -magX, magX);
 

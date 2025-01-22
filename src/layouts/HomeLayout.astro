@@ -23,14 +23,9 @@ import Header from "../components/medium/Header.astro";
     <ClientRouter />
   </head>
   <body transition:animate="fade">
-
     <Header title="Lisa" />
-    
-    <a 
-      href="/" 
-      class={current === "/" ? "hidden" : "back-to"}>
-      back home
-    </a>
+
+    <a href="/" class={current === "/" ? "hidden" : "back-to"}> back home </a>
 
     <main>
       <slot />
