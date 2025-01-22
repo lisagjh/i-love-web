@@ -4,7 +4,7 @@ const current = Astro.url.pathname;
 ---
 
 <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-<label for="menu-toggle" class="menu-button">
+<label for="menu-toggle" class="menu-button inverted-border-radius">
   <svg
     width="18"
     height="14"
@@ -80,12 +80,12 @@ const current = Astro.url.pathname;
     position:fixed;
     display: inline-block;
     cursor: pointer;
-    background-color: #121212;
+    --element-color: #121212;
+    background-color: var(--element-color);
     color: white;
     height: 2.5rem;
     width: 100vw;
     padding: 0.5rem 1rem;
-    border-radius: 0 0 0.2rem 0.2rem;
     box-shadow: 1px 1px 2px var(--color-one);
     font-size: 1.2rem;
     user-select: none;

@@ -83,3 +83,29 @@ a {
 .hidden {
   display: none;
 }
+
+.inverted-border-radius::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  background-color: transparent;
+  bottom: -3rem;
+  height: 3rem;
+  width: 4rem;
+  border-top-left-radius: 15px;
+  box-shadow: 0 -15px 0 0 var(--element-color);
+  z-index: 1;
+}
+
+.inverted-border-radius::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  bottom: -3rem;
+  height: 3rem;
+  width: 4rem;
+  border-top-right-radius: 15px;
+  box-shadow: 0 -15px 0 0 var(--element-color);
+  z-index: 1;
+}
