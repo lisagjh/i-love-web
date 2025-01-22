@@ -84,7 +84,8 @@ a {
   display: none;
 }
 
-.inverted-border-radius::before {
+/** inverted border radius on the bottom of the element */
+.inverted-border-radius-bottom::before {
   content: "";
   position: absolute;
   left: 0;
@@ -94,10 +95,10 @@ a {
   width: 4rem;
   border-top-left-radius: 15px;
   box-shadow: 0 -15px 0 0 var(--element-color);
-  z-index: 1;
+  z-index: -1;
 }
 
-.inverted-border-radius::after {
+.inverted-border-radius-bottom::after {
   content: "";
   position: absolute;
   right: 0;
@@ -107,5 +108,32 @@ a {
   width: 4rem;
   border-top-right-radius: 15px;
   box-shadow: 0 -15px 0 0 var(--element-color);
-  z-index: 1;
+  z-index: -1;
+}
+
+/** inverted border radius on the top of the element */
+.inverted-border-radius-top::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  background-color: transparent;
+  height: 3rem;
+  width: 4rem;
+  top: -3rem;
+  border-bottom-left-radius: 15px;
+  box-shadow: 0 15px 0 0 var(--element-color);
+  z-index: -1;
+}
+
+.inverted-border-radius-top::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  height: 3rem;
+  width: 4rem;
+  top: -3rem;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 15px 0 0 var(--element-color);
+  z-index: -1;
 }
