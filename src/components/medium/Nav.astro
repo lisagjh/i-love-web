@@ -22,7 +22,8 @@ const current = Astro.url.pathname;
       stroke-width="2.5"
       stroke-linecap="round"></path>
   </svg>
-  Menu
+  <span>Menu</span>
+  <span>Close</span>
 </label>
 
 <nav class="menu">
@@ -77,7 +78,7 @@ const current = Astro.url.pathname;
 
   /* Style the menu button */
   .menu-button {
-    position:fixed;
+    position: fixed;
     display: inline-block;
     cursor: pointer;
     --element-color: #121212;
@@ -149,11 +150,60 @@ const current = Astro.url.pathname;
     background-color: var(--color-one);
   }
 
+  /* show menu or close depending on input state */
+  /* Hide both spans initially */
+  label span {
+    margin-left: .5rem;
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+    transform: translateY(-.2rem);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  /* Show "Menu" when NOT checked */
+  .menu-toggle:not(:checked) ~ label span:nth-of-type(1) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Show "Close" when checked */
+  .menu-toggle:checked ~ label span:nth-of-type(2) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   /* show menu when checkbox is checked */
   .menu-toggle:checked ~ nav {
     margin-top: 0;
     transform: translateY(0);
     opacity: 1;
-    transition: opacity .15s ease-in-out, transform 0.3s ease-out;
+    transition:
+      opacity 0.15s ease-in-out,
+      transform 0.3s ease-out;
+  }
+
+  /* animate svg when checkbox is checked */
+  svg path {
+    transition: 0.25s ease-in-out;
+  }
+
+  .menu-toggle:checked ~ label svg path:nth-of-type(1) {
+    translate: -0.35rem 0.2rem;
+    rotate: 45deg;
+    transform-origin: center;
+  }
+
+  .menu-toggle:checked ~ label svg path:nth-of-type(3) {
+    translate: -0.35rem -0.2rem;
+    rotate: -45deg;
+    transform-origin: center;
+  }
+
+  .menu-toggle:checked ~ label svg path:nth-of-type(2) {
+    translate: -10% 0;
+    opacity: 0;
   }
 </style>
