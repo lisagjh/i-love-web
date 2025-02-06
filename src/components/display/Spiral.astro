@@ -37,18 +37,18 @@
 
     p.draw = () => {
       p.background(255);
-      p.fill(180, 180, 180);
+      p.fill(180);
       p.noStroke();
 
       p.textAlign(p.CENTER, p.CENTER);
-      p.textSize((containerHeight / elementsY) * 2);
+      p.textSize((containerHeight / elementsY) * 2.5);
 
       for (let y = 0; y < elementsY + 1; y++) {
         for (let x = 0; x < charset.length + 1; x++) {
           let posY = p.map(y, 0, elementsY, 0, containerHeight);
 
           let magX = p.map(
-            p.sin(p.radians(posY * 20 + p.frameCount * rotationSpeed)), // Added rotationSpeed here
+            p.sin(p.radians(posY * 25 + p.frameCount * rotationSpeed)), // Added rotationSpeed here
             -1,
             1,
             -p.width * 0.6,
