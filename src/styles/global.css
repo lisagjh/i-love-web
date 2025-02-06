@@ -3,27 +3,31 @@
   src: url(/fonts/LibreFranklin-var.ttf) format("truetype");
 }
 
-@font-face {
-  font-family: "Instrument Sans";
-  src: url(/fonts/InstrumentSans-var.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Grand";
-  src: url(/fonts/Grand-Bageur.ttf) format("truetype");
-}
 
 @font-face {
   font-family: "Commit Mono";
   src: url(/fonts/Commit-Mono.woff2) format("woff2");
 }
 
-html {
-  --heading: "Grand", Arial, Helvetica, sans-serif;
-  --paragraph: "IBM Plex Sans Regular", Arial, Helvetica, sans-serif;
-  --standard-heading: "Grand", Arial, Helvetica, sans-serif;
-  --standard-paragraph: "IBM Plex Sans Regular", Arial, Helvetica, sans-serif;
-  --paragraph-type-two: "Commit Mono", monospace;
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url(/fonts/IBMPlexSans-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Borel";
+  src: url(/fonts/Borel-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Special Elite";
+  src: url(/fonts/SpecialElite-Regular.ttf) format("truetype");
+}
+
+:root {
+  --heading: "Borel", serif;
+  --paragraph: "Commit Mono", monospace;
+  --paragraph-regular: "IBM Plex Sans", sans-serif;
 }
 
 * {
@@ -33,7 +37,7 @@ html {
 }
 
 body {
-  font-family: var(--paragraph);
+  font-family: var(--paragraph-regular);
   background-color: var(--background);
 }
 
