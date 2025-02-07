@@ -8,7 +8,6 @@ interface Props {
 const current = Astro.url.pathname;
 
 import Footer from "../components/medium/Footer.astro";
-import Header from "../components/medium/Header.astro";
 ---
 
 <!doctype html>
@@ -23,8 +22,6 @@ import Header from "../components/medium/Header.astro";
     <ClientRouter />
   </head>
   <body transition:animate="fade">
-    <Header title="Lisa" />
-
     <a href="/" class={current === "/" ? "hidden" : "back-to"}> back home </a>
 
     <main>
