@@ -38,6 +38,7 @@
 
 body {
   font-family: var(--paragraph-regular);
+  color: black;
   background-color: var(--background);
 }
 

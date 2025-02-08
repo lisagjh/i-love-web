@@ -2,12 +2,14 @@
 import "../styles/global.css";
 
 import HomeLayout from "../layouts/HomeLayout.astro";
+import Header from "../components/large/Header.astro";
 
 const pageTitle = "Home";
 ---
 
 <HomeLayout title={pageTitle}>
 
+  <Header />
 
   <div class="wrapper">
     <ul>

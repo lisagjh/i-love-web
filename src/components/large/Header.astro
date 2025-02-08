@@ -1,0 +1,34 @@
+---
+import Smile from "../small/Smile.astro";
+---
+
+<header>
+  <h1>
+    <span> Hi! I'm </span> Lisa
+  </h1>
+  <p>I'm an aspiring frontend developer from the Netherlands.</p>
+</header>
+
+<Smile />
+
+<style>
+  h1 {
+    font-size: 3rem;
+    font-family: var(--heading);
+    max-width: 5ch;
+    line-height: 0.8;
+    margin-bottom: -1rem;
+  }
+
+  h1 span {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: var(--paragraph);
+    letter-spacing: -2px;
+  }
+
+  p {
+    font-family: var(--paragraph);
+    letter-spacing: -1px;
+  }
+</style>
