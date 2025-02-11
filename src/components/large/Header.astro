@@ -3,19 +3,22 @@ import Spiral from "../display/Spiral.astro";
 ---
 
 <header>
-  <h1>
-    <span> Hi! I'm </span> Lisa
-  </h1>
-  <p>I'm an aspiring frontend developer from the Netherlands.</p>
-
+  <div class="text">
+    <h1>
+      <span> Hi! I'm </span> Lisa
+    </h1>
+    <p>I'm an aspiring frontend developer from the Netherlands.</p>
+  </div>
+  <div class="spiral">
     <Spiral />
-
+  </div>
 </header>
 
 <style>
   header {
     display: grid;
-    place-items: center;
+    align-items: center;
+    padding: 1rem;
   }
 
   h1 {
@@ -36,5 +39,12 @@ import Spiral from "../display/Spiral.astro";
   p {
     font-family: var(--paragraph);
     letter-spacing: -1px;
+    max-width: 30ch;
+  }
+
+  @media (width >= 500px) {
+    header {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 </style>

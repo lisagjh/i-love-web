@@ -7,7 +7,7 @@
     const charset = "∙··•˚̊*⁰";
 
     let containerHeight;
-    const rotationSpeed = .5; // Adjust this value to change speed (lower = slower, higher = faster)
+    const rotationSpeed = 0.5; // Adjust this value to change speed (lower = slower, higher = faster)
 
     p.setup = () => {
       const container = document.querySelector("div");
@@ -37,7 +37,7 @@
 
     p.draw = () => {
       p.background(255);
-      p.fill(180);
+      p.fill(100);
       p.noStroke();
 
       p.textAlign(p.CENTER, p.CENTER);
@@ -52,7 +52,7 @@
             -1,
             1,
             -p.width * 0.6,
-            200,
+            200
           );
           let posX = p.map(x, 0, elementsX, -magX, magX);
 
