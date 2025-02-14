@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import Lisa from "/src/assets/Lisa.png";
+---
+
 <section>
   <div class="info">
     <p>Amsterdam</p>
@@ -6,7 +11,7 @@
   <div class="me">
     <h1>Lisa</h1>
     <h1>van der Hoorn</h1>
-    <img src="/src/assets/Lisa.png" alt="Me" width="200" />
+    <Image src={Lisa} alt="Me" width="200" />
     <p>Frontend Developer</p>
   </div>
 </section>
