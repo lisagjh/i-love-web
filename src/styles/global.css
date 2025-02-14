@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "Merriweather";
+    src: url('/fonts/Merriweather-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Space Mono";
+    src: url('/fonts/SpaceMono-Regular.ttf') format('truetype');
+}
+
+:root {
+    --heading-font: "Merriweather", Arial, Helvetica, sans-serif;
+    --body-font: "Space Mono", monospace;
+}
+
+body {
+    font-family: var(--body-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+}
