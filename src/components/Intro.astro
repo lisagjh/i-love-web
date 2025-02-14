@@ -12,7 +12,13 @@ import Lisa from "/src/assets/Lisa.png";
     <h1>Lisa</h1>
     <h1>van der Hoorn</h1>
     <Image src={Lisa} alt="Me" width="200" />
-    <p>Frontend Developer</p>
+    <br />
+    <br />
+    <br />
+    <p>
+      <span>Frontend</span>
+      <span>Developer</span>
+    </p>
   </div>
 </section>
 
@@ -44,6 +50,14 @@ import Lisa from "/src/assets/Lisa.png";
 
   img {
     border-radius: 0.1rem;
+  }
+
+  .me p {
+    font-size: 0.9rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .info {

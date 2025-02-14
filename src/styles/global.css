@@ -16,7 +16,7 @@
     --primary-one-muted: #f5f5f5;
     --primary-two: #2b2b2b;
 
-    --link-color: #7943a1;
+    --link-color: #4e77ce;
 }
 
 * {
@@ -37,4 +37,10 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     color: var(--link-color);
+}
+
+/*  */
+
+section {
+    padding: 1rem;
 }
