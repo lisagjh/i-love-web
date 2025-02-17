@@ -1,69 +1,23 @@
 ---
-import { Image } from "astro:assets";
-import Lisa from "/src/assets/Lisa.png";
+import Intro from "../components/Intro.astro";
+import About from "../components/About.astro";
+import WorkShowcase from "../components/WorkShowcase.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<section>
-  <div class="info">
-    <p>Amsterdam</p>
-    <p>15:34</p>
-  </div>
-  <div class="me">
-    <h1>Lisa</h1>
-    <h1>van der Hoorn</h1>
-    <Image src={Lisa} alt="Me" width="200" />
-    <br />
-    <br />
-    <br />
-    <p>
-      <span>Frontend</span>
-      <span>Developer</span>
-    </p>
-  </div>
-</section>
+<Layout title="Welcome to Astro.">
+  <Intro />
+
+  <section id="sectionPin">
+    <div class="pin-wrap-sticky">
+      <div class="pin-wrap">
+        <About />
+        <WorkShowcase />
+      </div>
+    </div>
+  </section>
+</Layout>
 
 <style>
-  section {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 85vh;
-    padding: 1rem;
-  }
-
-  .me {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    padding: 10vh 0;
-  }
-
-  h1:first-of-type {
-    font-size: 3rem;
-    margin-bottom: -0.5rem;
-  }
-
-  h1:last-of-type {
-    font-size: 1rem;
-    font-style: italic;
-  }
-
-  img {
-    border-radius: 0.1rem;
-  }
-
-  .me p {
-    font-size: 0.9rem;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .info {
-    font-size: 0.75rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  
 </style>

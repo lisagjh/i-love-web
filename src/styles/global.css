@@ -39,8 +39,12 @@ a {
     color: var(--link-color);
 }
 
+p {
+    max-width: 45ch;
+}
 /*  */
 
 section {
     padding: 1rem;
+    width: 100vw;
 }
