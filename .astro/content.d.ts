@@ -147,34 +147,10 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"portfolio": Record<string, {
-  id: string;
-  body?: string;
-  collection: "portfolio";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"posts": Record<string, {
-  id: string;
-  body?: string;
-  collection: "posts";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"talks": Record<string, {
-  id: string;
-  body?: string;
-  collection: "talks";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-
+		
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../src/content/config.js");
+	export type ContentConfig = typeof import("../src/content.config.mjs");
 }
