@@ -155,30 +155,6 @@ declare module 'astro:content' {
   rendered?: RenderedContent;
   filePath?: string;
 }>;
-"books": Record<string, {
-  id: string;
-  body?: string;
-  collection: "books";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"booksRead": Record<string, {
-  id: string;
-  body?: string;
-  collection: "booksRead";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"projects": Record<string, {
-  id: string;
-  body?: string;
-  collection: "projects";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
 
 	};
 

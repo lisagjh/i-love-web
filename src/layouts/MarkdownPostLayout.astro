@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import { Image } from "astro:assets";
 const { frontmatter } = Astro.props;
 ---
 
@@ -7,23 +8,47 @@ const { frontmatter } = Astro.props;
   <p>{frontmatter.pubDate.toLocaleDateString()}</p>
   <p><em>{frontmatter.description}</em></p>
   <p>Written by: {frontmatter.author}</p>
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+  <Image
+    src={frontmatter.image.url}
+    width="300"
+    height="200"
+    alt={frontmatter.image.alt}
+  />
 
   <div class="tags">
-    {
-      frontmatter.tags.map((tag: string) => (
-        <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
-        </p>
-      ))
-    }
+    {frontmatter.tags.map((tag: string) => (
+      <p class="tag">
+        <a href={`/tags/${tag}`}>{tag}</a>
+      </p>
+    ))}
   </div>
+
+  {/* Conditionally render related posts if they exist */}
+  {frontmatter.relatedPosts?.length > 0 ? (
+    <>
+      <p>Related posts</p>
+      <ul>
+        {frontmatter.relatedPosts.map((post: string) => (
+          <li>
+            <a href={`/posts/${post}`}>{post}</a>
+          </li>
+        ))}
+      </ul>
+    </>
+  ) : (
+    <p>No related posts.</p>
+  )}
 
   <slot />
 </BaseLayout>
+
 <style>
   a {
     color: #00539f;
+  }
+
+  img {
+    object-fit: cover;
   }
 
   .tags {
