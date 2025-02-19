@@ -1,14 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Layout from "../layouts/Layout.astro";
 import BlogPost from "../components/BlogPost.astro";
 
-const pageTitle = "My Astro Learning Blog";
-const allPosts = await getCollection("blog");
+const allPosts = await getCollection("projects");
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <p>This is where I will post about my journey learning Astro.</p>
+<Layout>
   <ul>
     {
       allPosts.map((post) => (
@@ -16,4 +14,4 @@ const allPosts = await getCollection("blog");
       ))
     }
   </ul>
-</BaseLayout>
+</Layout>
