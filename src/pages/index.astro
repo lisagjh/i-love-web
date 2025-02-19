@@ -4,73 +4,69 @@ import About from "../components/About.astro";
 import WorkShowcase from "../components/WorkShowcase.astro";
 import Lab from "../components/Lab.astro";
 import Reads from "../components/Reads.astro";
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/BaseLayout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <Intro />
-
-  <section>
-
-    <a href="/blog">blog</a>
-
-  </section>
 
   <section id="sectionPin">
     <div class="pin-wrap-sticky">
       <div class="pin-wrap">
         <About />
         <WorkShowcase />
+        <Lab />
+        <Reads />
       </div>
     </div>
+  </section>
+</Layout>
 
-    <style>
-      /* Creates vertical scroll space */
-      #sectionPin {
-        height: 200vh; /* Adjust based on how long you want the effect */
-        overflow: visible;
-        padding: 0;
+<style>
+  /* Creates vertical scroll space */
+  #sectionPin {
+    height: 200vh; /* Adjust based on how long you want the effect */
+    overflow: visible;
+    padding: 0;
 
-        view-timeline-name: --section-pin-tl;
-        view-timeline-axis: block;
-      }
+    view-timeline-name: --section-pin-tl;
+    view-timeline-axis: block;
+  }
 
-      /* Sticky container to hold horizontal content */
-      .pin-wrap-sticky {
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        width: 100vw;
-        overflow-x: hidden;
-      }
+  /* Sticky container to hold horizontal content */
+  .pin-wrap-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+  }
 
-      /* Horizontal scrolling animation with snap effect */
-      .pin-wrap {
-        display: flex;
-        height: 100vh;
-        width: 200vmax; /* Adjust based on the number of components */
+  /* Horizontal scrolling animation with snap effect */
+  .pin-wrap {
+    display: flex;
+    height: 100vh;
+    width: 200vmax; /* Adjust based on the number of components */
 
-        /* Scroll snapping */
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
+    /* Scroll snapping */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 
-        /* Hook animation */
-        will-change: transform;
-        animation: linear move forwards;
-        animation-timeline: --section-pin-tl;
-        animation-range: contain 0% contain 100%;
-      }
+    /* Hook animation */
+    will-change: transform;
+    animation: linear move forwards;
+    animation-timeline: --section-pin-tl;
+    animation-range: contain 0% contain 100%;
+  }
 
-      /* Individual sections should snap into place */
-      .pin-wrap > * {
-        scroll-snap-align: end;
-      }
+  /* Individual sections should snap into place */
+  .pin-wrap > * {
+    scroll-snap-align: end;
+  }
 
-      @keyframes move {
-        to {
-          transform: translateX(calc(-100% + 100vw));
-        }
-      }
-    </style>
-  </section></Layout
->
+  @keyframes move {
+    to {
+      transform: translateX(calc(-100% + 100vw));
+    }
+  }
+</style>
