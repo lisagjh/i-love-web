@@ -8,5 +8,6 @@ image:
 tags: ["Sveltekit", "FDND"]
 author: "Me"
 relatedPosts:
-  - DDA-scroll
+  - dda-scroll
+  - dda-viewtransitions
 ---

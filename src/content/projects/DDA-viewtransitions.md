@@ -8,5 +8,6 @@ image:
 tags: ["Sveltekit", "FDND", "P5js", "View transitions"]
 author: "Me"
 relatedPosts:
-  - DDA
+  - dda
+  - dda-scroll
 ---

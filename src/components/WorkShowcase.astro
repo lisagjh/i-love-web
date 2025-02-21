@@ -1,22 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+
+const allPosts = await getCollection("projects");
+---
+
 <section>
   <h2>Work</h2>
+  <p>here you can find some projects i made</p>
   <ul>
-    <li><a href="/">Dutch Digital Agencies</a></li>
-    <li><a href="/">DDA - Scroll animation spike</a></li>
-    <li><a href="/">DDA - View transition spike</a></li>
+    {
+      allPosts.map((post) => (
+        <li>
+          <a href={`/posts/${post.id}`}>{post.data.title}</a>
+        </li>
+      ))
+    }
   </ul>
 </section>
 
-<style>
-  section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    min-height: 85vh;
-    padding: 1rem;
-  }
-
-  li::marker {
-    font-size: 0.5rem;
-  }
-</style>
+<style></style>

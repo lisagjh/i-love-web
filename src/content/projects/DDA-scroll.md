@@ -8,5 +8,6 @@ image:
 tags: ["Sveltekit", "FDND", "ThreeJS"]
 author: "Me"
 relatedPosts:
-  - DDA
+  - dda
+  - dda-viewtransitions
 ---

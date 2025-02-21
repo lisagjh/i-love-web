@@ -17,22 +17,27 @@
   --primary-two: #2b2b2b;
 
   --accent-one: #696262;
-  --accent-two: ;
+  --accent-two: #44454e;
 
   --link-color: #4e77ce;
+  --link-accent: #262299;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: .25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 body {
   font-family: var(--body-font);
   background-color: var(--primary-one);
   color: var(--primary-two);
+}
+
+main {
+  padding: 1.5rem 1rem;
 }
 
 h1,
@@ -48,10 +53,17 @@ a {
   color: var(--link-color);
 }
 
+a:hover {
+  color: var(--link-accent);
+}
+
 p {
   max-width: 45ch;
 }
-/*  */
+
+li::marker {
+  font-size: 0.5rem;
+}
 
 section {
   padding: 1rem;
