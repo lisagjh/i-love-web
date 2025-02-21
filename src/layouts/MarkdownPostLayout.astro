@@ -1,7 +1,21 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
 const { frontmatter } = Astro.props;
+
+// Fetch all posts
+const allPosts = await getCollection("projects");
+
+// Get full details of related posts
+const relatedPostsData = allPosts
+  .filter((post) => frontmatter.relatedPosts.includes(post.id)) // Use post.id instead of slug
+  .map((post) => ({
+    title: post.data.title,
+    slug: post.id, // Use id for linking
+    image: post.data.image,
+  }));
 ---
 
 <BaseLayout>
@@ -9,7 +23,8 @@ const { frontmatter } = Astro.props;
 
   <p><em>{frontmatter.description}</em></p>
 
-<a href={frontmatter.livesite}>view this project here</a>
+  <a href={frontmatter.livesite}>View this project here</a>
+
   <Image
     src={frontmatter.image.url}
     width="300"
@@ -17,22 +32,28 @@ const { frontmatter } = Astro.props;
     alt={frontmatter.image.alt}
   />
 
-  <p>{frontmatter.bodytext}</p>
+  <p>{frontmatter.bodyText}</p>
 
   {
-    frontmatter.relatedPosts.length > 0 ? (
+    relatedPostsData.length > 0 && (
       <section class="related-posts">
         <h2>Related Posts</h2>
         <ul>
-          {frontmatter.relatedPosts.map((post: string) => (
+          {relatedPostsData.map((post) => (
             <li class="related">
-              <a href={`/posts/${post}`}>{post}</a>
+              <a href={`/posts/${post.slug}`}>
+                <p>{post.title}</p>
+                <Image
+                  src={post.image.url}
+                  width="100"
+                  height="70"
+                  alt={post.image.alt}
+                />
+              </a>
             </li>
           ))}
         </ul>
       </section>
-    ) : (
-      ""
     )
   }
 
@@ -41,6 +62,8 @@ const { frontmatter } = Astro.props;
 
 <style>
   img {
+    width: 100%;
+    min-height: 8rem;
     object-fit: cover;
   }
 
@@ -64,13 +87,20 @@ const { frontmatter } = Astro.props;
 
   li {
     list-style-type: none;
+    min-height: 10rem;
     width: fit-content;
   }
 
   .related a {
-    display: inline-block;
-    width: fit-content;
-    color: var(--primary-two);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
     text-decoration: none;
+    color: var(--primary-two);
+  }
+
+  .related img {
+    border-radius: 0.2rem;
   }
 </style>
