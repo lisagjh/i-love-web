@@ -1,5 +1,5 @@
 ---
-import { ClientRouter } from 'astro:transitions';
+import { ClientRouter } from "astro:transitions";
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -24,3 +24,12 @@ const { pageTitle } = Astro.props;
     <Footer />
   </body>
 </html>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1rem;
+  }
+</style>

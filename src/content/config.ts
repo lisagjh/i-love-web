@@ -24,15 +24,15 @@ const projects = defineCollection({
   loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/projects" }),
   schema: z.object({
     title: z.string(),
-    pubDate: z.date(),
     description: z.string(),
-    author: z.string(),
     image: z.object({
       url: z.string(),
       alt: z.string(),
     }),
     tags: z.array(z.string()),
     relatedPosts: z.array(z.string()).optional(),
+    livesite: z.string().optional(),
+    bodytext: z.string().optional(),
   }),
 });
 // Export a single `collections` object to register your collection(s)
