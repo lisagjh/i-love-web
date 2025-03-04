@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
+import { Image } from "astro:assets";
 
 const allPosts = await getCollection("projects");
 ---
@@ -13,11 +14,16 @@ const allPosts = await getCollection("projects");
     {
       allPosts.map((post) => (
         <li>
-          <a href={`/posts/${post.id}`}>{post.data.title}</a>
+          <a href={`/posts/${post.id}`}>
+            {/* <Image
+              src={post.data.image.url}
+              alt={post.data.image.alt}
+              inferSize={true}
+            /> */}
+            {post.data.title}
+          </a>
         </li>
       ))
     }
   </ul>
 </section>
-
-<style></style>
