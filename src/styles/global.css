@@ -12,15 +12,13 @@
   --heading-font: "Merriweather", Arial, Helvetica, sans-serif;
   --body-font: "Space Mono", monospace;
 
-  --primary-one: #fbfbfb;
-  --primary-one-muted: #EDECE8;
-  --primary-two: #2b2b2b;
+  --white: #fef9fd;
+  --black: #191318;
+  --dark: #423540;
 
-  --accent-one: #696262;
-  --accent-two: #44454e;
-
-  --link-color: #4e77ce;
-  --link-accent: #262299;
+  --primary: #be5177;
+  --secondary: #ffaeb6;
+  --tertiary: #fbc9d7;
 }
 
 * {
@@ -32,7 +30,7 @@
 
 body {
   font-family: var(--body-font);
-  background-color: var(--primary-one);
+  background-color: var(--light);
   color: var(--primary-two);
 }
 
@@ -49,22 +47,11 @@ h6 {
   font-family: var(--heading-font);
 }
 
-a {
-  color: var(--link-color);
-}
-
-a:hover {
-  color: var(--link-accent);
-}
-
-p {
-  max-width: 45ch;
-}
-
 li::marker {
   font-size: 0.5rem;
 }
 
+/* classes */
 .section_full-width {
   padding: 1rem;
   width: 100vw;

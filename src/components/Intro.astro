@@ -1,66 +1,49 @@
 ---
-import { Image } from "astro:assets";
-import Flower from "../assets/svg/flower.svg";
+import gsap from "gsap";
 ---
 
-<section>
-  <div class="info">
-    <p>Amsterdam</p>
-    <p>15:34</p>
-  </div>
-  <div class="me">
-    <h1>Lisa</h1>
-    <h1>van der Hoorn</h1>
-    <!-- <Image src={Flower} alt="" width="200" /> -->
-  </div>
-  <div>
-    <p>Frontend</p>
-    <p>Developer</p>
-  </div>
+<script type="module">
+  import "/src/scripts/nameAnim.js";
+</script>
+
+<section class="section_full-width">
+  <svg
+    width="400"
+    height="401"
+    viewBox="0 0 400 401"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      class="l"
+      d="M100.53 251.174C121.351 247.665 174.588 193.972 181.72 168.6C194.137 124.43 166.958 95.7134 133.744 127.082C100.535 158.447 92.8283 225.79 137.979 263.168C190.74 306.847 268.908 278.853 297.509 190.282"
+      stroke="#BE5177"
+      stroke-width="30"
+      stroke-linecap="round"></path>
+    <path
+      class="i"
+      d="M156 194.032L158.826 247.958"
+      stroke="#FFAEB6"
+      stroke-width="20"
+      stroke-linecap="square"></path>
+    <path
+      class="s"
+      d="M218.403 212.931C213.264 187.939 188.161 188.501 184.161 212.334C180.9 231.758 218.001 235.998 217.74 250.942C217.315 275.308 190.244 274.55 183.378 257.167"
+      stroke="#FFAEB6"
+      stroke-width="20"
+      stroke-linecap="square"></path>
+    <path
+      class="a"
+      d="M274 249.508C274 249.508 272.688 229 272.02 220.471M243 249.508C243.277 240.892 243 232.503 243 220.508M243 220.508C243 201.003 246.086 177.508 258.086 178.008C270.086 178.508 271.353 211.942 272.02 220.471M243 220.508C258.85 220.508 256.171 220.471 272.02 220.471"
+      stroke="#FFAEB6"
+      stroke-width="20"
+      stroke-linecap="square"></path>
+  </svg>
 </section>
 
 <style>
-  section {
+  .section_full-width {
     display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 85vh;
-    padding: 1rem;
-  }
-
-  .me {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    padding: 10vh 0;
-  }
-
-  h1:first-of-type {
-    font-size: 3rem;
-    margin-bottom: -0.5rem;
-  }
-
-  h1:last-of-type {
-    font-size: 1rem;
-    font-style: italic;
-  }
-
-  img {
-    border-radius: 0.1rem;
-  }
-
-  .me p {
-    font-size: 0.9rem;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  div {
-    font-size: 0.75rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    min-height: 100vh;
   }
 </style>
