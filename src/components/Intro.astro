@@ -7,7 +7,7 @@ import gsap from "gsap";
 </script>
 
 <section class="section_full-width">
-  <svg
+  <svg class="name"
     width="400"
     height="401"
     viewBox="0 0 400 401"
@@ -45,5 +45,13 @@ import gsap from "gsap";
   .section_full-width {
     display: flex;
     min-height: 100vh;
+  }
+
+  svg path.l {
+    stroke: var(--primary);
+  }
+
+  svg path.i, path.s, path.a {
+    stroke: var(--secondary);
   }
 </style>
