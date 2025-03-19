@@ -7,6 +7,7 @@ import gsap from "gsap";
 </script>
 
 <section class="section_full-width">
+  <h1>Hi! I am</h1>
   <svg
     class="name"
     width="400"
@@ -45,7 +46,16 @@ import gsap from "gsap";
 <style>
   .section_full-width {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     min-height: 95vh;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: -4rem;
   }
 
   svg path.l {

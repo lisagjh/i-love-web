@@ -1,0 +1,22 @@
+---
+const classes = [
+  "standard",
+  "variation-one",
+  "variation-two",
+  "variation-three",
+  "variation-four",
+  "variation-five",
+];
+const randomClass = classes[Math.floor(Math.random() * classes.length)];
+---
+
+<button> Toggle Random Class </button>
+
+<script>
+  const button = document.querySelector("button");
+  if (button) {
+    button.addEventListener("click", function () {
+      document.body.classList.toggle(randomClass);
+    });
+  }
+</script>
