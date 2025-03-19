@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: -30,
   });
 
-  const tl = gsap.timeline({ delay: 0.2 });
+  const tl = gsap.timeline();
 
   tl.to(".l, .i, .s, .a", {
     opacity: 1,
@@ -40,14 +40,23 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".l, .i, .s, .a").forEach((letter) => {
     gsap.to(letter, {
       scrollTrigger: {
-        trigger: ".section_full-width",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
+        trigger: ".about",
+        scrub: 0.8,
       },
       yPercent: gsap.utils.random(-20, 30), // Each letter moves up randomly
       rotate: gsap.utils.random(-10, 10),
       ease: "power1.out",
     });
+  });
+
+  // Correcting this part:
+  const nameElement = document.querySelector(".name");
+  gsap.to(nameElement, {
+    scrollTrigger: {
+      trigger: ".about",
+      scrub: 0.8,
+    },
+    y: -200,
+    scale: 0.5,
   });
 });
