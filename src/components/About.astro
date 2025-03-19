@@ -1,9 +1,10 @@
 ---
-
+import gsap from "gsap";
 ---
 
 <script type="module">
   import "/src/scripts/nameAnim.js";
+  import "/src/scripts/alienAnim.js";
 </script>
 
 <section class="section_full-width about">
@@ -11,31 +12,64 @@
     <h1>Hello! I'm Lisa.</h1>
   </div>
 
+  <svg
+    class="box"
+    width="263"
+    height="435"
+    viewBox="0 0 263 435"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      class="body"
+      d="M135.938 0C-15.2554 0 0.488212 122.425 0.489101 244.271C0.489991 366.118 4.54105 411.557 42.7447 411.557C80.9483 411.557 60.1099 322.705 85.8684 322.705C115.389 322.705 71.6871 435 135.938 435C200.189 435 148.962 294.052 189.77 294.052C225.948 294.052 181.771 398.533 235.21 398.533C263.318 398.533 266.467 355.409 260.389 244.271C247.791 13.8922 210.254 0 135.938 0Z"
+      fill="#F4AFB7"></path>
+    <path
+      class="mouth"
+      d="M149.185 189H113.085C113.085 189 110.646 239.73 131.867 239.357C153.087 238.984 149.185 189 149.185 189Z"
+      fill="black"></path>
 
-  <svg width="455" height="752" viewBox="0 0 455 752" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path class="body" d="M235.501 0.5C-25.6994 0.5 1.49905 212 1.50059 422.5C1.50212 633 8.50067 711.5 74.5007 711.5C140.501 711.5 104.501 558 149.001 558C200.001 558 124.501 752 235.501 752C346.5 752 258 508.5 328.5 508.5C391 508.5 314.681 689 407.001 689C455.56 689 461.001 614.5 450.501 422.5C428.735 24.5 363.887 0.5 235.501 0.5Z" fill="#F4AFB7" />
-    <path class="mouth" d="M254.513 332H192.147C192.147 332 187.934 419.641 224.594 418.996C261.254 418.352 254.513 332 254.513 332Z" fill="black" />
-    <rect class="eye-left" x="111" y="257" width="79" height="60" rx="30" fill="white" />
-    <rect class="pupil-left" x="128" y="274" width="45" height="43" rx="21.5" fill="black" />
-    <path class="eyebrow-left" d="M111 238H190V264C190 264 165.789 251.93 150.5 252.083C134.392 252.245 111 264 111 264V238Z" fill="#F4AFB7" />
-    <rect class="eye-right" x="248" y="257" width="80" height="60" rx="30" fill="white" />
-    <rect class="pupil-right" x="266" y="274" width="45" height="43" rx="21.5" fill="black" />
-    <path class="eyebrow-right" d="M248 231H328V257C328 257 304.564 244.93 289.081 245.083C272.769 245.245 248 257 248 257V231Z" fill="#F4AFB7"/>
+    <rect
+      class="eye-ball-left eyeball"
+      x="56"
+      y="127"
+      width="57"
+      height="57"
+      rx="28.5"
+      fill="white"></rect>
+    <rect
+      class="eye-pupil-left pupil"
+      x="68.4912"
+      y="152.612"
+      width="32.0147"
+      height="30.5919"
+      rx="15.2959"
+      fill="black"></rect>
+
+    <path
+      class="eyebrow-left eyebrow"
+      d="M56 123H112.204V141.497C112.204 141.497 94.9791 132.91 84.1018 133.019C72.6417 133.134 56 141.497 56 141.497V123Z"
+      fill="#F4AFB7"></path>
+
+    <rect
+      class="eye-ball-right eyeball"
+      x="150"
+      y="127"
+      width="57"
+      height="57"
+      rx="28.5"
+      fill="white"></rect>
+    <rect
+      class="eye-pupil-right pupil"
+      x="162.491"
+      y="152.612"
+      width="32.0147"
+      height="30.5919"
+      rx="15.2959"
+      fill="black"></rect>
+    <path
+      class="eyebrow-right eyebrow"
+      d="M150 123H206.204V141.497C206.204 141.497 188.979 132.91 178.102 133.019C166.642 133.134 150 141.497 150 141.497V123Z"
+      fill="#F4AFB7"></path>
   </svg>
-
-  <svg width="263" height="435" viewBox="0 0 263 435" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path class="body" d="M135.938 0C-15.2554 0 0.488212 122.425 0.489101 244.271C0.489991 366.118 4.54105 411.557 42.7447 411.557C80.9483 411.557 60.1099 322.705 85.8684 322.705C115.389 322.705 71.6871 435 135.938 435C200.189 435 148.962 294.052 189.77 294.052C225.948 294.052 181.771 398.533 235.21 398.533C263.318 398.533 266.467 355.409 260.389 244.271C247.791 13.8922 210.254 0 135.938 0Z" fill="#F4AFB7"/>
-    <path class="mouth" d="M146.943 191.886H110.843C110.843 191.886 108.405 242.616 129.625 242.243C150.846 241.87 146.943 191.886 146.943 191.886Z" fill="black"/>
-   <g class="eye-left">
-        <rect class="eye-ball-left" x="63.8721" y="148.473" width="45.7285" height="34.7305" rx="17.3653" fill="white"/>
-        <rect class="eye-pupil-left" x="73.7124" y="158.313" width="26.0479" height="24.8902" rx="12.4451" fill="black"/>
-   </g>
-    <path class="eyebrow-left" d="M63.8721 137.475H109.601V152.525C109.601 152.525 95.5864 145.538 86.7363 145.627C77.4121 145.721 63.8721 152.525 63.8721 152.525V137.475Z" fill="#F4AFB7"/>
-    <rect class="eye-ball-right" x="143.173" y="148.473" width="46.3074" height="34.7305" rx="17.3653" fill="white"/>
-   <g class="eye-right">
-        <rect class="eye-pupil-right" x="153.592" y="158.313" width="26.0479" height="24.8902" rx="12.4451" fill="black"/>
-        <path class="eyebrow-right" d="M143.173 133.423H189.481V148.473C189.481 148.473 175.915 141.486 166.953 141.575C157.511 141.669 143.173 148.473 143.173 148.473V133.423Z" fill="#F4AFB7"/>
-   </g>
-    </svg>
-    
 </section>
