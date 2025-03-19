@@ -1,6 +1,5 @@
-import gsap from "gsap";
-gsap.registerPlugin(ScrollTrigger) 
-
+import { gsap } from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 
 function getPathLength(selector) {
   const path = document.querySelector(selector);
@@ -42,8 +41,7 @@ tl.to(
   .to(".s", { y: 0, duration: 0.5, ease: "elastic.out(1,0.3)" }, "-=0.5")
   .to(".a", { y: 0, duration: 0.5, ease: "elastic.out(1,0.3)" }, "-=0.5");
 
-
-  gsap.to('.name', {
-    scrollTrigger: '.box', // start animation when ".box" enters the viewport
-    x: 500
+gsap.to(".name", {
+  scrollTrigger: ".box", // start animation when ".box" enters the viewport
+  x: 500,
 });
