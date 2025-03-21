@@ -1,22 +1,50 @@
 ---
-const classes = [
-  "standard",
-  "variation-one",
-  "variation-two",
-  "variation-three",
-  "variation-four",
-  "variation-five",
-];
-const randomClass = classes[Math.floor(Math.random() * classes.length)];
+
 ---
 
-<button> Toggle Random Class </button>
-
 <script>
+  const classes = [
+    "standard",
+    "variation-one",
+    "variation-two",
+    "variation-three",
+    "variation-four",
+    "variation-five",
+  ];
+
+  let lastClass = ""; // Store the last selected class
+
   const button = document.querySelector("button");
+
   if (button) {
     button.addEventListener("click", function () {
-      document.body.classList.toggle(randomClass);
+      let randomClass;
+
+      // Keep picking a new class until it's different from the last one
+      do {
+        randomClass = classes[Math.floor(Math.random() * classes.length)];
+      } while (randomClass === lastClass);
+
+      // Remove previously applied classes
+      document.body.classList.remove(...classes);
+
+      // Apply the new class
+      document.body.classList.add(randomClass);
+
+      // Update lastClass to track the last applied class
+      lastClass = randomClass;
     });
   }
 </script>
+
+<button aria-label="Toggle Random Class"></button>
+
+<style>
+  button {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--primary);
+    background: linear-gradient(0deg, var(--primary) 0%, var(--secondary) 100%);
+    transition: 0.25s ease-in-out;
+    view-transition-name: button;  }
+</style>
