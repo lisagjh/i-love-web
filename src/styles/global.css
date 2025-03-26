@@ -1,27 +1,19 @@
-@font-face {
-  font-family: "Merriweather";
-  src: url("/fonts/Merriweather-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Space Mono";
-  src: url("/fonts/SpaceMono-Regular.ttf") format("truetype");
-}
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
-  --heading-font: "Merriweather", Arial, Helvetica, sans-serif;
-  --body-font: "Space Mono", monospace;
+  --body-font: "Geist", sans-serif;
+  --heading-font: "Tinos", serif;
 
-  --white: #fef9fd;
-  --black: #191318;
-  --dark: #423540;
+  --white: #fcfaf8;
+  --black: #101010;
+  --dark: #303030;
 
-  --bg: #f8f6f7;
-  --text: #121212;
+  --bg: #fcfaf8;
+  --text: #101010;
 
-  --primary: #be5177;
-  --secondary: #ffaeb6;
-  --tertiary: #fbc9d7;
+  --primary: #cfc8c1;
+  --secondary: #b79e86;
+  --tertiary: #c06a31;
 }
 
 * {
@@ -44,6 +36,12 @@ h4,
 h5,
 h6 {
   font-family: var(--heading-font);
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+p {
+  letter-spacing: -1px;
 }
 
 li::marker {
