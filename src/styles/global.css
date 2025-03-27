@@ -11,9 +11,12 @@
   --bg: #fcfaf8;
   --text: #101010;
 
-  --primary: #cfc8c1;
-  --secondary: #b79e86;
-  --tertiary: #c06a31;
+  --primary-one: #3b3a39;
+  --primary-two: #f194b6;
+
+  --primary: #64C1D8;
+  --secondary: #EEB384;
+  --tertiary: #A6BDCB;
 }
 
 * {
@@ -41,7 +44,14 @@ h6 {
 }
 
 p {
-  letter-spacing: -1px;
+  letter-spacing: 0px;
+  font-weight: 300;
+  max-width: 45ch;
+  font-size: 1.25rem;
+}
+
+button {
+  font-size: .9rem;
 }
 
 li::marker {
