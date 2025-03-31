@@ -2,14 +2,13 @@
 
 @font-face {
   font-family: "Grand Bageur";
-  src: url('/src/assets/fonts/grand-bageur.woff2') format('woff2');
+  src: url("/src/assets/fonts/grand-bageur.woff2") format("woff2");
 }
-
 
 :root {
   --body-font: "Geist", sans-serif;
+  --heading-font: "Grand Bageur", sans-serif;
   --heading-font: "Tinos", serif;
-  --heading-font: "Grand Bageur", sans-serif; 
 
   --white: #fcfaf8;
   --black: #101010;
@@ -21,9 +20,9 @@
   --primary-one: #3b3a39;
   --primary-two: #f194b6;
 
-  --primary: #64C1D8;
-  --secondary: #EEB384;
-  --tertiary: #A6BDCB;
+  --primary: #64c1d8;
+  --secondary: #eeb384;
+  --tertiary: #a6bdcb;
 }
 
 * {
@@ -37,6 +36,10 @@ body {
   font-family: var(--body-font);
   background-color: var(--bg);
   color: var(--text);
+
+  background-image: url("/src/assets/svg/bg.svg");
+  background-position: center;
+  background-size: 30%;
 }
 
 h1,
@@ -58,16 +61,16 @@ p {
 }
 
 button {
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 li::marker {
-  font-size: 0.5rem;
+  font-size: 0.75rem;
 }
 
 /* classes */
 .section_full-width {
-  padding: 1rem;
+  padding: 1.5rem;
   width: 100vw;
 }
 
