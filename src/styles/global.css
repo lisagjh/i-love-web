@@ -1,8 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+@font-face {
+  font-family: "Grand Bageur";
+  src: url('/src/assets/fonts/grand-bageur.woff2') format('woff2');
+}
+
+
 :root {
   --body-font: "Geist", sans-serif;
   --heading-font: "Tinos", serif;
+  --heading-font: "Grand Bageur", sans-serif; 
 
   --white: #fcfaf8;
   --black: #101010;
