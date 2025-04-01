@@ -1,0 +1,84 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+import { Image } from "astro:assets";
+
+const allPosts = await getCollection("projects");
+---
+
+<section class="section_full-width">
+  <h2>Work</h2>
+  <p>here you can find some projects i made</p>
+  <ul class="wrapper">
+    {
+      allPosts.map((post) => (
+        <li>
+          <a href={`/posts/${post.id}`}>
+            <Image
+              src={post.data.image.url}
+              alt={post.data.image.alt}
+              inferSize
+            />
+            {post.data.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h2::before {
+    content: url(/src/assets/svg/star-small.svg);
+    height: 1rem;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 15rem;
+    width: 15rem;
+    aspect-ratio: 1 / 1;
+    list-style: none;
+    background: linear-gradient(0deg, var(--primary), var(--secondary));
+    padding: 1rem;
+    border-radius: 0.15rem;
+    position: relative;
+  }
+
+  li a {
+    color: currentColor;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  img {
+    height: 10.2rem;
+    width: 15.1rem;
+    object-fit: cover;
+    aspect-ratio: 1 / 1.6;
+    margin-top: -.2rem;
+    rotate: 2deg;
+    box-shadow: 0 0 2px 0px var(--dark);
+  }
+</style>

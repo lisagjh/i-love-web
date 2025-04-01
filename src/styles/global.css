@@ -1,139 +1,137 @@
-@font-face {
-  font-family: "Libre Franklin";
-  src: url(/fonts/LibreFranklin-var.ttf) format("truetype");
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 @font-face {
-  font-family: "Commit Mono";
-  src: url(/fonts/Commit-Mono.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "IBM Plex Sans";
-  src: url(/fonts/IBMPlexSans-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Borel";
-  src: url(/fonts/Borel-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Special Elite";
-  src: url(/fonts/SpecialElite-Regular.ttf) format("truetype");
+  font-family: "Grand Bageur";
+  src: url("/src/assets/fonts/grand-bageur.woff2") format("woff2");
 }
 
 :root {
-  --heading: "Borel", serif;
-  --paragraph: "Commit Mono", monospace;
-  --paragraph-regular: "IBM Plex Sans", sans-serif;
+  --body-font: "Geist", sans-serif;
+  --heading-font: "Grand Bageur", sans-serif;
+  --heading-font: "Tinos", serif;
+
+  --white: #fcfaf8;
+  --black: #101010;
+  --dark: #303030;
+
+  --bg: #fcfaf8;
+  --text: #101010;
+
+  --primary-one: #3b3a39;
+  --primary-two: #f194b6;
+
+  --primary: #64c1d8;
+  --secondary: #eeb384;
+  --tertiary: #a6bdcb;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: 0.25s ease-in-out;
 }
 
 body {
-  font-family: var(--paragraph-regular);
-  color: black;
-  background-color: var(--background);
-}
+  font-family: var(--body-font);
+  background-color: var(--bg);
+  color: var(--text);
 
-/* text */
+  background-image: url("/src/assets/svg/bg.svg");
+  background-position: center;
+  background-size: 30%;
+}
 
 h1,
 h2,
-h3 {
-  font-family: var(--heading);
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  font-weight: 400;
+  letter-spacing: 0px;
 }
 
-/* general */
-
-li {
-  list-style: "";
+p {
+  letter-spacing: 0px;
+  font-weight: 300;
+  max-width: 45ch;
+  font-size: 1.25rem;
 }
 
-a {
-  color: currentColor;
-  font-weight: 600;
+button {
+  padding: 1rem 0.5rem;
+  border: none;
+  border-radius: 2px;
+  text-transform: uppercase;
+  box-shadow: 0 0 1px 0px var(--dark);
+
+  background: linear-gradient(
+    90deg,
+    var(--secondary) 0%,
+    var(--secondary) 50%,
+    var(--bg) 50%
+  );
+  background-size: 200%;
+  background-position: right;
+  transition: 0.25s ease-out;
 }
 
-/** reusable classes */
-
-.back-to {
-  display: inline-block;
-  margin: 3rem 1.5rem;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
+button:hover {
+  color: var(--dark);
+  background-position: left;
+  box-shadow: 0 0 1px 0px var(--bg);
 }
 
-.back-to::before {
-  content: "<-";
+button:active {
+  scale: 0.98;
 }
 
-.back-to:hover {
-  text-decoration: underline;
-  scale: 1.01;
+li::marker {
+  font-size: 0.75rem;
 }
 
-.hidden {
-  display: none;
+/* classes */
+.section_full-width {
+  padding: 1.5rem;
+  width: 100vw;
 }
 
-/** inverted border radius on the bottom of the element */
-/* element-color is defined on element level */
-.inverted-border-radius-bottom::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  background-color: transparent;
-  bottom: -3rem;
-  height: 3rem;
-  width: 4rem;
-  border-top-left-radius: 15px;
-  box-shadow: 0 -15px 0 0 var(--element-color);
-  z-index: -1;
+/* color classes */
+.variation-one {
+  --primary: #6ba57c;
+  --secondary: #f194b6;
 }
 
-.inverted-border-radius-bottom::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  background-color: transparent;
-  bottom: -3rem;
-  height: 3rem;
-  width: 4rem;
-  border-top-right-radius: 15px;
-  box-shadow: 0 -15px 0 0 var(--element-color);
-  z-index: -1;
+.variation-two {
+  --primary: #a730e7;
+  --secondary: #ef7685;
 }
 
-/** inverted border radius on the top of the element */
-.inverted-border-radius-top::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  background-color: transparent;
-  height: 3rem;
-  width: 4rem;
-  top: -3rem;
-  border-bottom-left-radius: 15px;
-  box-shadow: 0 15px 0 0 var(--element-color);
-  z-index: -1;
+.varitation-three {
+  --primary: #af5aeb;
+  --secondary: #f4868b;
 }
 
-.inverted-border-radius-top::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  background-color: transparent;
-  height: 3rem;
-  width: 4rem;
-  top: -3rem;
-  border-bottom-right-radius: 15px;
-  box-shadow: 0 15px 0 0 var(--element-color);
-  z-index: -1;
+.variation-four {
+  --primary: #2c7f5d;
+  --secondary: #f08f8f;
+}
+
+.variation-five {
+  --primary: #296de7;
+  --secondary: #f0bb78;
+}
+
+.dark {
+  --bg: #121212;
+  --text: #fefefe;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #fefefe;
+  }
 }

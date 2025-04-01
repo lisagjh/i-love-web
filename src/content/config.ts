@@ -1,48 +1,42 @@
-import { defineCollection, z } from "astro:content";
+// Import the glob loader
+import { glob } from "astro/loaders";
+// Import utilities from `astro:content`
+import { z, defineCollection } from "astro:content";
 
-const postsCollection = defineCollection({
-  type: 'content',
+// Define a `loader` and `schema` for each collection
+const blog = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/blog" }),
   schema: z.object({
     title: z.string(),
-    date: z.date(),
+    pubDate: z.date(),
+    description: z.string(),
+    author: z.string(),
+    image: z.object({
+      url: z.string(),
+      alt: z.string(),
+    }),
+    tags: z.array(z.string()),
+    relatedPosts: z.array(z.string()).optional(),
+  }),
+});
+
+const projects = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/projects" }),
+  schema: z.object({
+    id: z.number(),
+    title: z.string(),
     description: z.string(),
     image: z.object({
       url: z.string(),
       alt: z.string(),
     }),
     tags: z.array(z.string()),
+    relatedPosts: z.array(z.string()).optional(),
+    livesite: z.string().optional(),
+    bodytext: z.string().optional(),
   }),
 });
-
-const talkCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    date: z.date(),
-    description: z.string(),
-    tags: z.array(z.string()),
-  }),
-});
-
-const portfolioCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    text: z.string().optional(),
-    live: z.string().url().optional(), // Optional live URL
-    repo: z.string().url().optional(), // Optional repo URL
-    image: z.object({
-      url: z.string(),
-      alt: z.string()
-    }),
-    tags: z.array(z.string()).optional(), // Optional tags array
-  })
-});
-
-
-export const collections = {
-  posts: postsCollection,
-  talks: talkCollection,
-  portfolio: portfolioCollection,
-};
+// Export a single `collections` object to register your collection(s)
+export const collections = { 
+  blog, 
+  projects };

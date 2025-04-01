@@ -1,19 +1,19 @@
 ---
-import { getCollection } from 'astro:content';
-import TalkLayout from '../../layouts/TalkLayout.astro';
+import { getCollection, render } from "astro:content";
+import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('posts');
-
-  return blogEntries.map(entry => ({
-    params: { slug: entry.slug }, 
-    props: { entry },
+  const posts = await getCollection("projects");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
   }));
 }
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { post } = Astro.props;
+const { Content } = await render(post);
 ---
-<TalkLayout frontmatter={entry.data}>
+
+<MarkdownPostLayout frontmatter={post.data}>
   <Content />
-</TalkLayout>
+</MarkdownPostLayout>

@@ -1,0 +1,109 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const { frontmatter } = Astro.props;
+
+// Fetch all posts
+const allPosts = await getCollection("projects");
+
+// Get full details of related posts
+const relatedPostsData = allPosts
+  .filter((post) => frontmatter.relatedPosts.includes(post.id)) // Use post.id instead of slug
+  .map((post) => ({
+    title: post.data.title,
+    slug: post.id, // Use id for linking
+    image: post.data.image,
+  }));
+---
+
+<BaseLayout>
+  <h1>{frontmatter.title}</h1>
+
+  <p><em>{frontmatter.description}</em></p>
+
+  <a href={frontmatter.livesite}>View this project here</a>
+
+  <Image
+    src={frontmatter.image.url}
+    width="300"
+    height="200"
+    alt={frontmatter.image.alt}
+  />
+
+  <p>{frontmatter.bodyText}</p>
+
+  {
+    relatedPostsData.length > 0 && (
+      <section class="related-posts">
+        <h2>Related Posts</h2>
+        <ul>
+          {relatedPostsData.map((post) => (
+            <li class="related">
+              <a href={`/posts/${post.slug}`}>
+                <p>{post.title}</p>
+                <Image
+                  src={post.image.url}
+                  width="100"
+                  height="70"
+                  alt={post.image.alt}
+                />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <slot />
+</BaseLayout>
+
+<style>
+  img {
+    height: 100%;
+    min-height: 8rem;
+    max-height: 25rem;
+    object-fit: cover;
+  }
+
+  .related-posts {
+    width: fit-content;
+    padding: 1rem 0.5rem;
+    border: 1px solid var(--accent-one);
+    border-radius: 0.1rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: fit-content;
+  }
+
+  li {
+    list-style-type: none;
+    min-height: 10rem;
+    width: fit-content;
+  }
+
+  .related a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--primary-two);
+  }
+
+  .related img {
+    border-radius: 0.2rem;
+    width: 100%;
+    object-fit: cover;
+  }
+</style>

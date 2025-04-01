@@ -1,10 +1,9 @@
+// @ts-check
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  devToolbar: {
-    enabled: false,
+  output: 'static',
+  server: {
+    port: 3001, // Set the port for the development server
   },
-  output: "static",
-  outDir: "./dist", 
-  output: "static", // Static Site Generation
 });

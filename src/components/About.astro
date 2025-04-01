@@ -1,0 +1,55 @@
+<section class="about">
+  <h2>About</h2>
+  <div class="wrapper">
+    <p>Hi! Like I said: I’m Lisa, an aspiring frontend developer.</p>
+    <p>
+      I’m currently working towards getting my degree in <span>
+      I’m currently working towards getting my degree in   Frontend Development &
+        Design @ HVA
+      I’m currently working towards getting my degree in </span>. During this course I’ve developed strong skills in HTML, CSS
+      and JavaScript. I’ve got experience building dynamic websites with
+     <span> Node.js</span>, <span>Express</span> and <span>EJS</span>. I’ve also worked with modern frameworks like
+      SvelteKit and Astro.
+    </p>
+    <p>
+      Beyond coding, I have a solid foundation in web design principles,
+      ensuring that my work is not only functional but also visually appealing
+      and user-friendly. I focus on crafting intuitive, accessible, and engaging
+      interfaces that enhance the user experience.
+    </p>
+    <p>
+      I’m ambitious, curious and love diving into new and unfamiliar
+      technologies. I enjoy challenging myself, solving problems, and exploring
+      different solutions. I have explored creative coding with p5.js and
+      Three.js this way, and am excited to learn more.
+    </p>
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  h2 {
+    justify-self: center;
+    min-width: fit-content;
+    width: 30vw;
+  }
+
+  h2::before {
+    content: url(/src/assets/svg/flower.svg);
+    height: 1rem;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+</style>
