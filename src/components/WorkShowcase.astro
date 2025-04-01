@@ -15,11 +15,11 @@ const allPosts = await getCollection("projects");
       allPosts.map((post) => (
         <li>
           <a href={`/posts/${post.id}`}>
-            {/* <Image
+            <Image
               src={post.data.image.url}
               alt={post.data.image.alt}
-              inferSize={true}
-            /> */}
+              inferSize
+            />
             {post.data.title}
           </a>
         </li>
@@ -39,7 +39,7 @@ const allPosts = await getCollection("projects");
   .wrapper {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   h2::before {
@@ -47,5 +47,38 @@ const allPosts = await getCollection("projects");
     height: 1rem;
     vertical-align: middle;
     margin-right: 0.5rem;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 15rem;
+    width: 15rem;
+    aspect-ratio: 1 / 1;
+    list-style: none;
+    background: linear-gradient(0deg, var(--primary), var(--secondary));
+    padding: 1rem;
+    border-radius: 0.15rem;
+    position: relative;
+  }
+
+  li a {
+    color: currentColor;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  img {
+    height: 10.2rem;
+    width: 15.1rem;
+    object-fit: cover;
+    aspect-ratio: 1 / 1.6;
+    margin-top: -.2rem;
+    rotate: 2deg;
+    box-shadow: 0 0 2px 0px var(--dark);
   }
 </style>
