@@ -9,7 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^4.2.3",
+    "@splinetool/loader": "^0.9.425",
+    "@splinetool/react-spline": "^4.0.0",
     "astro": "^5.2.5",
-    "gsap": "^3.12.7"
+    "gsap": "^3.12.7",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "three": "^0.149.0"
   }
 }
