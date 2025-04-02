@@ -86,23 +86,23 @@ export default function StarShape() {
 
       // Create geometry
       const geometry = new THREE.ExtrudeGeometry(shapes[0], {
-        depth: 0.2,
+        depth: 0.15,
         bevelEnabled: true,
         bevelThickness: 0.1,
         bevelSize: 0.05,
-        bevelSegments: 5,
+        bevelSegments: 8,
       });
 
       // Create material for glass effect
       const material = new THREE.MeshStandardMaterial({
-        color: 0x64c1d8, // Base color of the glass
-        metalness: 0.1, // Glass has low metalness
+        color: 0xeeb384, // Base color of the glass
+        metalness: 0.01, // Glass has low metalness
         roughness: 0.05, // Smooth surface for glossiness
         transparent: true, // Enable transparency
         opacity: 0.8, // Semi-transparent
-        envMap: envMap, // Environment map for reflections
-        refractionRatio: 0.98, // Glass refractive index (0.98 for glass)
-        reflectivity: 0.1, // Light reflectivity
+        // envMap: envMap, // Environment map for reflections
+        refractionRatio: 0.08, // Glass refractive index (0.98 for glass)
+        reflectivity: 0.3, // Light reflectivity
         clearcoat: 1, // Clear glossy coating on top of the glass
         clearcoatRoughness: 0, // Very smooth clearcoat for high gloss
       });
@@ -111,12 +111,26 @@ export default function StarShape() {
     };
 
     // Add lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-    scene.add(ambientLight);
+    const skyColor = 0x00ccff; // light blue
+    const groundColor = 0xff7100; // brownish orange
+    const intensity = 0.01;
+    // const light = new THREE.AmbientLight(color, intensity);
+    const light = new THREE.HemisphereLight(
+      skyColor,
+      groundColor,
+      intensity
+    );
+    light.position.set(0, 200, 0);
+    scene.add(light);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(2, 2, 5);
-    scene.add(directionalLight);
+
+    
+    // const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    // scene.add(ambientLight);
+
+    // const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    // directionalLight.position.set(2, 2, 5);
+    // scene.add(directionalLight);
 
     // Mouse interaction to rotate the star based on mouse movement
     const handleMouseMove = (event) => {
